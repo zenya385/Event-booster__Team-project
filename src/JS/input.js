@@ -1,10 +1,11 @@
 import axios from 'axios';
+
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2';
-const API_KEY = 'bdHFOjAkpUBvne7gzKAkA6SZNtgLzUV4';
-export default async function fetchImages(event, country) {
+const API_KEY = 'mwPGNQc6oAGCcUN76qKb1vw6XCSZXdwt';
+export default async function fetchImages(event,country) {
   try {
     const fetch = await axios.get(
-      `${BASE_URL}/events.json?apikey=${API_KEY}&keyword=${event}&countryCode=${country}`,
+      `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${event}&apikey=mwPGNQc6oAGCcUN76qKb1vw6XCSZXdwt&locale=${country}`
     );
     const data = fetch.data;
     console.log(data);
