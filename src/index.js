@@ -5,4 +5,5 @@ import './JS/header';
 import './JS/input';
 import './JS/modal';
 import './JS/input';
-
+import './templates/markup.hbs'
+import './templates/modal.hbs.hbs'
