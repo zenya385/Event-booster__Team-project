@@ -1,16 +1,21 @@
-{{!-- {{#each this}}
-<div class="photo-card">
- <img class="img" src="{{events.images.url}}" alt="{{events.images.attribution}}" loading="lazy" />
-  <div class="info">
-    <p class="info-item">
-      <b><span>{{events.name}}</span></b>
-    </p>
-    <p class="info-item">
-      <b><span>{{events.dates.start.localDate}}</span></b>
-    </p>
-    <p class="info-item">
-      <b><span>{{events.seatmap.staticUrl}}</span></b>
-    </p>
+{{#each this}}
+  <div class='photo-card'>
+    <img
+      class='img'
+      src='{{events.images.url}}'
+      alt='{{events.images.attribution}}'
+      loading='lazy'
+    />
+    <div class='info'>
+      <p class='info-item'>
+        <b><span>{{events.name}}</span></b>
+      </p>
+      <p class='info-item'>
+        <b><span>{{events.dates.start.localDate}}</span></b>
+      </p>
+      <p class='info-item'>
+        <b><span>Привет{{events.seatmap.staticUrl}}</span></b>
+      </p>
+    </div>
   </div>
-</div>
-{{/each}} --}}
+{{/each}}

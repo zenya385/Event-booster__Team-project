@@ -8,6 +8,7 @@ export default async function fetchImages(event, country) {
       `${BASE_URL}/events.json?keyword=${event}&apikey=${API_KEY}&countryCode=${country}&page=1&size=20`,
     );
     const data = fetch.data;
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error.message);
