@@ -1,5 +1,12 @@
-@import './bg.scss';
-@import './footer.scss';
-@import './header.scss';
-@import './input.scss';
-@import './modal.scss';
+@import './root';
+@import './base/common';
+@import './base/reset';
+@import './components/container';
+@import './components/fonts';
+@import './components/modal';
+@import './layout/bg';
+@import './layout/header';
+@import './layout/hero';
+@import './layout/input';
+@import './layout/pagination';
+@import './layout/footer';
