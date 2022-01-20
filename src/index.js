@@ -7,3 +7,4 @@ import './JS/modal';
 import './JS/input';
 import './templates/markup.hbs';
 import './templates/modal.hbs';
+import './JS/main'
