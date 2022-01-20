@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;AAKA,aALA,QAAA,oBACA,QAAA,WACA,QAAA,eACA,QAAA,eACA,QAAA,cACA,QAAA","file":"src.58f361fb.js","sourceRoot":"../src","sourcesContent":["import './sass/main.scss';\nimport './JS/bg';\nimport './JS/footer';\nimport './JS/header';\nimport './JS/input';\nimport './JS/modal';\nimport './JS/input';\n\n"]}
