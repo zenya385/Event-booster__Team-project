@@ -1,9 +1,9 @@
-import './sass/main.scss';
-import './JS/bg';
+import './sass/_main.scss';
+import './JS/modal';
 import './JS/footer';
 import './JS/header';
 import './JS/input';
 import './JS/modal';
 import './JS/input';
-import './templates/markup.hbs'
-import './templates/modal.hbs.hbs'
+import './templates/markup.hbs';
+import './templates/modal.hbs';
