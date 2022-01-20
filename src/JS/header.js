@@ -20,42 +20,11 @@ function asd(event) {
   const searchingInput = refs.searchingInput.value;
   console.log();
   const countryInput = refs.countryInput.value;
-  fetchImages(searchingInput, countryInput);
+  fetchImages(searchingInput, countryInput).then(({ _embedded }) => {
+    const markUp = templates(_embedded.events);
+    refs.gallery.insertAdjacentHTML('beforebegin', markUp);
+    console.log(_embedded.events);
 
-  const markUp = templates();
-  console.log(markUp);
-  // .then(({ embedded: { events } }) => {
-  //   console.log(events);
-  // });
-  // createMarkUp(events);
-  console.log(event);
-  // for(event in)
-  refs.gallery.insertAdjacentHTML('beforebegin', markUp);
+    return markUp;
+  });
 }
-
-// function createMarkUp(embedded) {
-//   console.log(Object.entries(embedded));
-//   return Object.entries(embedded)
-//     .map(event => {
-//       ` <div class='photo-card'>
-//     <img
-//       class='img'
-//       src='${event.images.url}'
-//       alt='${event.images.attribution}'
-//       loading='lazy'
-//     />
-//     <div class='info'>
-//       <p class='info-item'>
-//         <b><span>${event.name}</span></b>
-//       </p>
-//       <p class='info-item'>
-//         <b><span>${event.dates.start.localDate}</span></b>
-//       </p>
-//       <p class='info-item'>
-//         <b><span>${event.seatmap.staticUrl}</span></b>
-//       </p>
-//     </div>
-//   </div>`;
-//     })
-//     .join('');
-// }
