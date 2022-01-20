@@ -1,0 +1,113 @@
+.header {
+  background-image: url(../img/mobile1x.png);
+  display: block;
+  content: '';
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.header__title {
+  width: 212px;
+  height: 44px;
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+
+  margin-bottom: 50px;
+
+  text-align: center;
+
+  color: var(--accent-color);
+
+  text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0;
+}
+
+.header__form--input {
+  display: block;
+  width: 270px;
+  height: 40px;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(100px);
+  border: none;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  border-radius: 20px;
+
+  margin-bottom: 30px;
+
+  color: #939393;
+}
+.header__form--input1 {
+  width: 270px;
+  height: 40px;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(100px);
+
+  border: none;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #939393;
+  border-radius: 20px;
+}
+// .header__logo--image {
+//   //   margin-right: ;
+//   background-color: black;
+// }
+// .header__logo {
+//     position: relative;
+//     width: 477px;
+//     height: 402px;
+//     left: -504px;
+//     top: 38px;
+//     background: linear-gradient(
+//       136.07deg,
+//       rgba(196, 196, 196, 0.03) 10.75%,
+//       rgba(196, 196, 196, 0) 92.33%
+//     );
+//     backdrop-filter: blur(30px);
+//   }
+
+// .advantages {
+//     background-color: var(--bg-footer-color);
+//   }
+//   .advantages__list {
+//     @media screen and (min-width: 768px) {
+//       display: flex;
+//     }
+//   }
+//   .advantages__item::before {
+//     display: block;
+//     content: '';
+//     height: 50px;
+//     background-repeat: no-repeat;
+//     margin-bottom: 16px;
+//     @media screen and (min-width: 768px) {
+//       margin-bottom: 36px;
+//     }
+//     @media screen and (min-width: 1280px) {
+//       margin-bottom: 40px;
+//     }
+//   }
+//   .advantages-icon1::before {
+//     background-image: url(../images/advantages-icon1.png);
+//   }
+//   .advantages-icon2::before {
+//     background-image: url(../images/advantages-icon2.png);
+//   }
+//   .advantages-icon3::before {
+//     background-image: url(../images/advantages-icon3.png);
+//   }
