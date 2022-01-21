@@ -1,7 +1,13 @@
+// .header {
+//   background-color: black;
+// }
+
 .header {
   height: 364px;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url('../img/mobile1x.png');
+  background: rgba(11, 11, 11, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-image:  linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%),
+   url('../img/mobile1x.png');
 
   margin-left: auto;
   margin-right: auto;
@@ -10,24 +16,24 @@
   background-color: var(--black-color);
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     background-size: cover;
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url(../img/mobile1x.png);
+    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%),
+     url('../img/mobile2x.png');
   }
   @media screen and (min-width: 480px) {
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url(../img/mobile1x.png);
+    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%),
+    url('../img/tablet1x.png');
 
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url(../img/mobile1x.png);
+      background-image: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%),
+      url('../img/tablet2x.png');
     }
   }
   @media screen and (min-width: 1200px) {
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url(../img/mobile1x.png);
+    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%), 
+    url('../img/web1x.png');
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url(../img/mobile1x.png);
+      background-image: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%), 
+      url('../img/web2x.png');
     }
   }
 }
@@ -89,8 +95,17 @@
   color: #939393;
   border-radius: 20px;
 }
-.header__logo--image {
-}
 .header__logo {
-  background: linear-gradient(rgba(196, 196, 196, 0.03) 10.75%, rgba(196, 196, 196, 0) 92.33%);
+position: absolute;
+width: 180px;
+height: 213.97px;
+left: 106.97px;
+top: -90px;
+
+
+ }
+.header__logo--svg {
+  width: 60px;
+  height: 30px;
+  fill: #ffffff;
 }
