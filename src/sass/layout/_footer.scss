@@ -8,6 +8,7 @@
   color: #939393;
   padding-top: 80px;
   padding-bottom: 19px;
+  width: 100%;
 
   .footer-item {
     display: flex;
@@ -30,7 +31,7 @@
     margin-right: 5px;
   }
   .footer-link {
-    text-decoration: underline;
+    text-decoration: none;
     color: #939393;
   }
   .footer-item-space {
@@ -38,23 +39,21 @@
   }
 
   @media screen and (min-width: 480px) {
-    width: 480px;
     .footer-item {
-      display: inline-flex;
+      display: flex;
+      text-align: center;
     }
   }
   @media screen and (min-width: 768px) {
     .footer-item {
-      display: inline-flex;
-      //   line-height: 1.36;
+      display: flex;
     }
-    .footer-item-span {
-      align-items: center;
-    }
+    // .footer-item-span {
+    //   align-items: center;
+    // }
   }
 
   @media screen and (min-width: 1280px) {
-    width: 1050px;
     .footer-item {
       display: inline-flex;
     }
