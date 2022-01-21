@@ -8,10 +8,8 @@ const refs = {
   searchingInput: document.querySelector('.header__form--input'),
   countryInput: document.querySelector('.header__form--input1'),
   gallery: document.querySelector('.gallery'),
-  btn: document.querySelector('.abc'),
 };
 
-console.log(refs.btn);
 
 refs.headerForm.addEventListener('input', debounce(asd, 500));
 
