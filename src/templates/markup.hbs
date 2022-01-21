@@ -1,21 +1,21 @@
 {{#each this}}
-  <div class='photo-card'>
+  <a class="img-link" href=""><div class='photo-card'>
     <img
       class='img'
-      src='{{images.url}}'
+      src='https://proumnyjdom.ru/wp-content/uploads/2019/06/word-image-33-1024x439.jpeg'
       alt='{{images.attribution}}'
       loading='lazy'
     />
     <div class='info'>
-      <p class='info-item'>
+      <p class='info-item-name'>
         <b><span>{{name}}</span></b>
       </p>
-      <p class='info-item'>
-        <b><span>{{dates.start.localDate}}</span></b>
+      <p class='info-item-lokal'>
+        <span>{{dates.start.localDate}}</span>
       </p>
-      <p class='info-item'>
+      <p class='info-item-address'>
         <b><span>{{place.address}}</span></b>
       </p>
     </div>
-  </div>
+  </div></a>
 {{/each}}
