@@ -3,6 +3,7 @@ import { debounce } from 'debounce';
 import fetchImages from './input';
 import templates from '../templates/markup.hbs';
 import modalMarkup from '../templates/modal.hbs';
+import modalOpen from './modal';
 const arr = [];
 const refs = {
   headerForm: document.querySelector('.header__form'),
@@ -18,44 +19,34 @@ function asd(event) {
   const searchingInput = refs.searchingInput.value;
   const countryInput = refs.countryInput.value;
   fetchImages(searchingInput, countryInput).then(({ _embedded }) => {
-    function arrr(a) {
-      const y = a.map(names => {
-        console.log(names.images[0].url);
-        // console.log(names);
+    function arrr(events) {
+      const markup = events.map(event => {
         return `
         <div class='photo-card' data-id='{{id}}'>
         <img
           class='img'
-          src='${names.images[0].url}'
+          src='${event.images[0].url}'
           alt=''
           loading='lazy'
         />
         <div class='info'>
           <p class='info-item-name'>
-            <b><span>${names.name}</span></b>
+            <b><span>${event.name}</span></b>
           </p>
           <p class='info-item-lokal'>
-            <span>${names.dates.start.localDate}</span>
+            <span>${event.dates.start.localDate}</span>
           </p>
           <p class='info-item-address'>
-            <b><span></span></b>
+            <b><span>${event._embedded.venues[0].name}</span></b>
           </p>
         </div>
       </div>
         `;
-
-        // arr.push(names.name);
-        // arr.push(names.url);
-        // arr.push(names.dates.start.localDate);
-        // return arr;
-      });
-      refs.gallery.insertAdjacentHTML('beforebegin', y);
+      }).join('');
+      refs.gallery.insertAdjacentHTML('beforebegin', markup);
+     
     }
-    // for (let i = 0; i < names.length; i++) {
-    //   let prop = names[i].url
-    //   console.log(prop.url,"at:",prop.x,prop.y);
     arrr(_embedded.events);
-    // console.log(arr);
-    // const markUp = templates(arr);
+  
   });
 }
