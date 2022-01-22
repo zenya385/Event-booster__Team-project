@@ -1,14 +1,14 @@
-//  (() => {
-//     const refs = {
-//       openModalBtn: document.querySelector('.photo-card'),
-//       closeModalBtn: document.querySelector('.modal-close-js'),
-//       modal: document.querySelector('.modal-js'),
-//     };
+export default function modal() {
+    const refs = {
+      openModalBtn: document.querySelector('.gallery'),
+      closeModalBtn: document.querySelector('.modal-close-js'),
+      modal: document.querySelector('.modal-js'),
+    };
 
-//     refs.openModalBtn.addEventListener('click', toggleModal);
-//     refs.closeModalBtn.addEventListener('click', toggleModal);
+    refs.openModalBtn.addEventListener('click', toggleModal);
+    // refs.closeModalBtn.addEventListener('click', toggleModal);
 
-//     function toggleModal() {
-//       refs.modal.classList.toggle('is-hidden');
-//     }
-//   })();
+    function toggleModal() {
+      refs.modal.classList.toggle('is-hidden');
+    }
+  };
