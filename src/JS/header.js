@@ -8,6 +8,9 @@ const refs = {
   searchingInput: document.querySelector('.header__form--input'),
   countryInput: document.querySelector('.header__form--input1'),
   gallery: document.querySelector('.gallery'),
+  openModalBtn: document.querySelector('[data-modal-open]'),
+  closeModalBtn: document.querySelector('[data-modal-close]'),
+  modal: document.querySelector('[data-modal]'),
 };
 refs.headerForm.addEventListener('input', debounce(asd, 500));
 function asd(event) {
@@ -48,18 +51,14 @@ function asd(event) {
   });
 }
 document.addEventListener('click', getData);
+
 function getData(e) {
   e.preventDefault();
   if (e.target.dataset.div === 'event') {
     const dataId = e.target.getAttribute('data-id');
-    modal();
-
-    console.log(dataId);
 
     fetchModalInfo(dataId).then(name => {
-      console.log(name);
-
-      const renderMarkup = `<div class="modal-content modal-content-js" >
+      const renderMarkup = `<div data-modal class="modal-markup "><button data-modal-close class="">X</button>
     <h2>INFO</h2>
     <p>${name.info}</p>
     <h2>WHEN</h2>
@@ -78,5 +77,12 @@ function getData(e) {
 
       refs.gallery.insertAdjacentHTML('beforebegin', renderMarkup);
     });
+  }
+  refs.closeModalBtn.addEventListener('click', closeModal);
+
+  function closeModal() {
+    refs.modal.classList.add('is-hidden');
+
+    console.log('xxx');
   }
 }
