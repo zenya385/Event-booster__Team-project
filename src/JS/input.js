@@ -23,3 +23,5 @@ export default function fetchImages(event, country) {
 }
 
 // &countryCode=${country}
+
+
