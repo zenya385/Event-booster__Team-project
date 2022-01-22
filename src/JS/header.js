@@ -16,8 +16,9 @@ function asd(event) {
   const countryInput = refs.countryInput.value;
   fetchImages(searchingInput, countryInput).then(({ _embedded }) => {
     function arrr(events) {
-      const markup = events.map(event => {
-        return `
+      const markup = events
+        .map(event => {
+          return `
         <div class='photo-card' data-div='event' data-id='${event.id}'>
         <img
           class='img'
@@ -38,25 +39,27 @@ function asd(event) {
         </div>
       </div>
         `;
-      }).join('');
+        })
+        .join('');
       console.log(_embedded.events);
       refs.gallery.innerHTML = markup;
     }
     arrr(_embedded.events);
-  })
+  });
 }
-document.addEventListener('click', getData)
-function getData (e){
-e.preventDefault();
-if(e.target.dataset.div === 'event'){
-  const dataId = e.target.getAttribute('data-id')
-  modal();
-  console.log(dataId)
-  
-  fetchModalInfo(dataId).then(name=>{
-   console.log(name);
-  function renderMarkup(name){
-    return `<div class="modal-content modal-content-js" >
+document.addEventListener('click', getData);
+function getData(e) {
+  e.preventDefault();
+  if (e.target.dataset.div === 'event') {
+    const dataId = e.target.getAttribute('data-id');
+    modal();
+
+    console.log(dataId);
+
+    fetchModalInfo(dataId).then(name => {
+      console.log(name);
+
+      const renderMarkup = `<div class="modal-content modal-content-js" >
     <h2>INFO</h2>
     <p>${name.info}</p>
     <h2>WHEN</h2>
@@ -71,10 +74,9 @@ if(e.target.dataset.div === 'event'){
     <p></p>
     <button>BUY TICKET</button>
     <button>MORE FROM THIS AUTHOR</button>
-  </div>`
-  }
-  })
-  
-}
+  </div>`;
 
+      refs.gallery.insertAdjacentHTML('beforebegin', renderMarkup);
+    });
+  }
 }
