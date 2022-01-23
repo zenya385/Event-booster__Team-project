@@ -11,18 +11,24 @@ const refs = {
   gallery: document.querySelector('.gallery'),
   openModalBtn: document.querySelector('[data-modal-open]'),
   modal: document.querySelector('[data-modal]'),
-  selectCountry: document.querySelectorAll('#selectCountries')
+  selectCountry: document.querySelectorAll('#selectCountries'),
 };
+console.log(refs.countryInput);
+
 // console.log(refs.selectCountry);
 refs.headerForm.addEventListener('input', debounce(onInput, 500));
 function onInput(event) {
   event.preventDefault();
   const searchingInput = refs.searchingInput.value;
   const countryInput = refs.countryInput.value;
-  fetchImages(searchingInput,countryInput).then(({ _embedded }) => {
-    // console.log(_embedded.events[0]._embedded.venues[0].country.countryCode);
-    countryCode(_embedded.events[19]._embedded.venues[0].country.countryCode).then(console.log)
-    
+  console.log(countryInput);
+  countryCode(countryInput).then(({ _embedded }) => {
+    function markup(countyCodes) {
+      const markup = events;
+    }
+  });
+  fetchImages(searchingInput).then(({ _embedded }) => {
+    // console.log(_embedded.events[19]._embedded.venues[0].country.countryCode);
     function renderMarkupCards(events) {
       const markup = events
         .map(event => {
@@ -52,7 +58,6 @@ function onInput(event) {
       refs.gallery.innerHTML = markup;
     }
     renderMarkupCards(_embedded.events);
-    
   });
 }
 document.addEventListener('click', getData);
@@ -61,9 +66,10 @@ function getData(e) {
   e.preventDefault();
   if (e.target.dataset.div === 'event') {
     const dataId = e.target.getAttribute('data-id');
-    fetchModalInfo(dataId).then(name => {
-      console.log(name);
-      const renderMarkup = `
+    fetchModalInfo(dataId)
+      .then(name => {
+        console.log(name);
+        const renderMarkup = `
     <div class="is-hidden modal-js">
     <button data-modal-close class="">X</button>
     <h2>INFO</h2>
@@ -80,18 +86,17 @@ function getData(e) {
     <p></p>
     <button>BUY TICKET</button>
     <button>MORE FROM THIS AUTHOR</button></div>`;
-      refs.gallery.insertAdjacentHTML('beforebegin', renderMarkup);
-      const modalJs = document.querySelector('.modal-js');
-      console.log(modalJs);
-      if (modalJs) {
-        modalJs.classList.remove('is-hidden');
-        const closeModalBtn = document.querySelector('[data-modal-close]');
-        closeModalBtn.addEventListener('click', () => {
-          modalJs.remove();
-        });
-      }
-    }).catch(console.log('erorr'));
+        refs.gallery.insertAdjacentHTML('beforebegin', renderMarkup);
+        const modalJs = document.querySelector('.modal-js');
+        console.log(modalJs);
+        if (modalJs) {
+          modalJs.classList.remove('is-hidden');
+          const closeModalBtn = document.querySelector('[data-modal-close]');
+          closeModalBtn.addEventListener('click', () => {
+            modalJs.remove();
+          });
+        }
+      })
+      .catch(console.log('erorr'));
   }
 }
-
-
