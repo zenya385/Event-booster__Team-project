@@ -2,6 +2,8 @@ import axios from 'axios';
 import { debounce } from 'debounce';
 import fetchImages from './input';
 import fetchModalInfo from './main';
+import countryCode from './fetchCountryCodes';
+
 const refs = {
   headerForm: document.querySelector('.header__form'),
   searchingInput: document.querySelector('.header__form--input'),
@@ -9,14 +11,25 @@ const refs = {
   gallery: document.querySelector('.gallery'),
   openModalBtn: document.querySelector('[data-modal-open]'),
   modal: document.querySelector('[data-modal]'),
+  selectCountry: document.querySelectorAll('#selectCountries'),
 };
-refs.headerForm.addEventListener('input', debounce(asd, 500));
-function asd(event) {
+console.log(refs.countryInput);
+
+// console.log(refs.selectCountry);
+refs.headerForm.addEventListener('input', debounce(onInput, 500));
+function onInput(event) {
   event.preventDefault();
   const searchingInput = refs.searchingInput.value;
   const countryInput = refs.countryInput.value;
-  fetchImages(searchingInput, countryInput).then(({ _embedded }) => {
-    function arrr(events) {
+  console.log(countryInput);
+  countryCode(countryInput).then(({ _embedded }) => {
+    function markup(countyCodes) {
+      const markup = events;
+    }
+  });
+  fetchImages(searchingInput).then(({ _embedded }) => {
+    // console.log(_embedded.events[19]._embedded.venues[0].country.countryCode);
+    function renderMarkupCards(events) {
       const markup = events
         .map(event => {
           return `
@@ -44,7 +57,7 @@ function asd(event) {
         .join('');
       refs.gallery.innerHTML = markup;
     }
-    arrr(_embedded.events);
+    renderMarkupCards(_embedded.events);
   });
 }
 document.addEventListener('click', getData);
@@ -53,9 +66,10 @@ function getData(e) {
   e.preventDefault();
   if (e.target.dataset.div === 'event') {
     const dataId = e.target.getAttribute('data-id');
-    fetchModalInfo(dataId).then(name => {
-      console.log(name);
-      const renderMarkup = `
+    fetchModalInfo(dataId)
+      .then(name => {
+        console.log(name);
+        const renderMarkup = `
     <div class="is-hidden modal-js">
     <button data-modal-close class="">X</button>
     <h2>INFO</h2>
@@ -72,16 +86,17 @@ function getData(e) {
     <p></p>
     <button>BUY TICKET</button>
     <button>MORE FROM THIS AUTHOR</button></div>`;
-      refs.gallery.insertAdjacentHTML('beforebegin', renderMarkup);
-      const modalJs = document.querySelector('.modal-js');
-      console.log(modalJs);
-      if (modalJs) {
-        modalJs.classList.remove('is-hidden');
-        const closeModalBtn = document.querySelector('[data-modal-close]');
-        closeModalBtn.addEventListener('click', () => {
-          modalJs.remove();
-        });
-      }
-    }).catch(console.log('erorr'));
+        refs.gallery.insertAdjacentHTML('beforebegin', renderMarkup);
+        const modalJs = document.querySelector('.modal-js');
+        console.log(modalJs);
+        if (modalJs) {
+          modalJs.classList.remove('is-hidden');
+          const closeModalBtn = document.querySelector('[data-modal-close]');
+          closeModalBtn.addEventListener('click', () => {
+            modalJs.remove();
+          });
+        }
+      })
+      .catch(console.log('erorr'));
   }
 }
