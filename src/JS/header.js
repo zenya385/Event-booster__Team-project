@@ -2,14 +2,12 @@ import axios from 'axios';
 import { debounce } from 'debounce';
 import fetchImages from './input';
 import fetchModalInfo from './main';
-import modal from './modal';
 const refs = {
   headerForm: document.querySelector('.header__form'),
   searchingInput: document.querySelector('.header__form--input'),
   countryInput: document.querySelector('.header__form--input1'),
   gallery: document.querySelector('.gallery'),
   openModalBtn: document.querySelector('[data-modal-open]'),
-  closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
 };
 refs.headerForm.addEventListener('input', debounce(asd, 500));
@@ -44,7 +42,6 @@ function asd(event) {
         `;
         })
         .join('');
-      console.log(_embedded.events);
       refs.gallery.innerHTML = markup;
     }
     arrr(_embedded.events);
@@ -56,9 +53,11 @@ function getData(e) {
   e.preventDefault();
   if (e.target.dataset.div === 'event') {
     const dataId = e.target.getAttribute('data-id');
-
     fetchModalInfo(dataId).then(name => {
-      const renderMarkup = `<div data-modal class="modal-markup "><button data-modal-close class="">X</button>
+      console.log(name);
+      const renderMarkup = `
+    <div class="is-hidden modal-js">
+    <button data-modal-close class="">X</button>
     <h2>INFO</h2>
     <p>${name.info}</p>
     <h2>WHEN</h2>
@@ -72,17 +71,17 @@ function getData(e) {
     <button>BUY TICKET</button>
     <p></p>
     <button>BUY TICKET</button>
-    <button>MORE FROM THIS AUTHOR</button>
-  </div>`;
-
+    <button>MORE FROM THIS AUTHOR</button></div>`;
       refs.gallery.insertAdjacentHTML('beforebegin', renderMarkup);
-    });
-  }
-  refs.closeModalBtn.addEventListener('click', closeModal);
-
-  function closeModal() {
-    refs.modal.classList.add('is-hidden');
-
-    console.log('xxx');
+      const modalJs = document.querySelector('.modal-js');
+      console.log(modalJs);
+      if (modalJs) {
+        modalJs.classList.remove('is-hidden');
+        const closeModalBtn = document.querySelector('[data-modal-close]');
+        closeModalBtn.addEventListener('click', () => {
+          modalJs.remove();
+        });
+      }
+    }).catch(console.log('erorr'));
   }
 }
