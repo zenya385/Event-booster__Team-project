@@ -22,17 +22,16 @@
 
 // console.log(refs.closeModalBtn);
 
-//   // refs.openModalBtn.addEventListener('click', toggleModal);
+//   refs.openModalBtn.addEventListener('click', toggleModal);
 //   refs.closeModalBtn.addEventListener('click', closeModal);
 
-//   // function toggleModal() {
-//   //   refs.modal.classList.remove('is-hidden');
-//   //   console.log('ok');
-//   // }
+//   function toggleModal() {
+//     refs.modal.classList.remove('is-hidden');
+//     console.log('ok');
+//   }
 
 //   function closeModal() {
 //     refs.modal.classList.add('is-hidden');
 
 //     console.log('xxx');
-//   }
-// })();
+//   };
