@@ -2,6 +2,8 @@ import axios from 'axios';
 import { debounce } from 'debounce';
 import fetchImages from './input';
 import fetchModalInfo from './main';
+import countryCode from './fetchCountryCodes';
+
 const refs = {
   headerForm: document.querySelector('.header__form'),
   searchingInput: document.querySelector('.header__form--input'),
@@ -9,14 +11,19 @@ const refs = {
   gallery: document.querySelector('.gallery'),
   openModalBtn: document.querySelector('[data-modal-open]'),
   modal: document.querySelector('[data-modal]'),
+  selectCountry: document.querySelectorAll('#selectCountries')
 };
-refs.headerForm.addEventListener('input', debounce(asd, 500));
-function asd(event) {
+// console.log(refs.selectCountry);
+refs.headerForm.addEventListener('input', debounce(onInput, 500));
+function onInput(event) {
   event.preventDefault();
   const searchingInput = refs.searchingInput.value;
   const countryInput = refs.countryInput.value;
-  fetchImages(searchingInput, countryInput).then(({ _embedded }) => {
-    function arrr(events) {
+  fetchImages(searchingInput,countryInput).then(({ _embedded }) => {
+    // console.log(_embedded.events[0]._embedded.venues[0].country.countryCode);
+    countryCode(_embedded.events[19]._embedded.venues[0].country.countryCode).then(console.log)
+    
+    function renderMarkupCards(events) {
       const markup = events
         .map(event => {
           return `
@@ -44,7 +51,8 @@ function asd(event) {
         .join('');
       refs.gallery.innerHTML = markup;
     }
-    arrr(_embedded.events);
+    renderMarkupCards(_embedded.events);
+    
   });
 }
 document.addEventListener('click', getData);
@@ -85,3 +93,5 @@ function getData(e) {
     }).catch(console.log('erorr'));
   }
 }
+
+
