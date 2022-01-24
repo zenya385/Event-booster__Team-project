@@ -1,11 +1,21 @@
 {{#each this}}
-<div class="modal modal-js">
+<div class="modal modal-js is-hidden">
     <button class="modal-close modal-close-js">Close</button>
     <div>
-        <img src="{{event.images}}" alt="">
+        <img src="{{images.url}}" alt="{{images.attribution}}">
         <div class="modal-content modal-content-js">
-            <h2>{{event.name}}</h2>
-            <p>{{event.description}}</p>
+            <h2>INFO</h2>
+            <p>{{description}}</p>
+            <h2>WHEN</h2>
+            <p>{{dates.start.localDate}}</p>
+            <h2>WHO</h2>
+            <p>{{name}}</p>
+            <h2>PRICES</h2>
+            <p>{{priceRanges.min}}</p>
+            <button>BUY TICKET</button>
+            <p>{{priceRanges.max}}</p>
+            <button>BUY TICKET</button>
+            <button>MORE FROM THIS AUTHOR</button>
         </div>
     </div>
 </div>

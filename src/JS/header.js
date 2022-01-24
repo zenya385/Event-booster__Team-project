@@ -1,28 +1,133 @@
 import axios from 'axios';
 import { debounce } from 'debounce';
 import fetchImages from './input';
-import templates from '../templates/markup.hbs';
+import fetchModalInfo from './main';
+import countryCode from './fetchCountryCodes';
 
 const refs = {
   headerForm: document.querySelector('.header__form'),
   searchingInput: document.querySelector('.header__form--input'),
   countryInput: document.querySelector('.header__form--input1'),
   gallery: document.querySelector('.gallery'),
+  openModalBtn: document.querySelector('[data-modal-open]'),
+  modal: document.querySelector('[data-modal]'),
+  selectCountry: document.querySelectorAll('#selectCountries'),
 };
+// console.log(refs.countryInput);
 
-
-refs.headerForm.addEventListener('input', debounce(asd, 500));
-
-function asd(event) {
+// console.log(refs.selectCountry);
+refs.headerForm.addEventListener('input', debounce(onInput, 500));
+function onInput(event) {
   event.preventDefault();
   const searchingInput = refs.searchingInput.value;
-  console.log();
   const countryInput = refs.countryInput.value;
-  fetchImages(searchingInput, countryInput).then(({ _embedded }) => {
-    const markUp = templates(_embedded.events);
-    refs.gallery.insertAdjacentHTML('beforebegin', markUp);
-    console.log(_embedded.events);
+  // console.log(countryInput);
+  // countryCode(countryInput).then(({ _embedded}) => {
+  //   console.log(_embedded);
+  //   console.log( _embedded.venues)
+  //   function renderMarkupFilter(events) {
+  //     const markup = events.map(
+  //       event=>{
+  //         return `
+  //       <div class='photo-card' data-div='event' data-id='${event.id}'>
+  //       <img
+  //         class='img'
+  //         src=''
+  //         alt=''
+  //         loading='lazy'
+  //       />
+  //       <div class='info'>
+  //         <p class='info-item-name'>
+  //           <b><span>${event.name}</span></b>
+  //         </p>
+  //         <p class='info-item-lokal'>
+  //           <span></span>
+  //         </p>
+  //         <p class='info-item-address'>
+  //           <b><span></span></b>
+  //         </p>
+  //       </div>
+  //     </div>
+  //       `;
+  //       })
+  //       .join('');
+  //       refs.gallery.innerHTML = markup;
+  //   }
+  //   renderMarkupFilter(_embedded.venues)
+  // });
+  fetchImages(searchingInput, countryInput)
+    .then(({ _embedded }) => {
+      console.log(_embedded);
+      // console.log(_embedded.events[19]._embedded.venues[0].country.countryCode);
+      function renderMarkupCards(events) {
+        const markup = events
+          .map(event => {
+            return `
+        <div class='photo-card' data-div='event' data-id='${event.id}'>
+        <img
+          class='img'
+          src='${event.images[0].url}'
+          alt=''
+          loading='lazy'
+        />
+        <div class='info'>
+          <p class='info-item-name'>
+            <b><span>${event.name}</span></b>
+          </p>
+          <p class='info-item-lokal'>
+            <span>${event.dates.start.localDate}</span>
+          </p>
+          <p class='info-item-address'>
+            <b><span>${event._embedded.venues[0].name}</span></b>
+          </p>
+        </div>
+      </div>
+        `;
+          })
+          .join('');
+        refs.gallery.innerHTML = markup;
+      }
+      renderMarkupCards(_embedded.events);
+    })
+    .catch(console.log);
+}
+document.addEventListener('click', getData);
 
-    return markUp;
-  });
+function getData(e) {
+  e.preventDefault();
+  if (e.target.dataset.div === 'event') {
+    const dataId = e.target.getAttribute('data-id');
+    fetchModalInfo(dataId)
+      .then(name => {
+        console.log(name);
+        const renderMarkup = `
+    <div class="is-hidden modal-js">
+    <button data-modal-close class="">X</button>
+    <h2>INFO</h2>
+    <p>${name.info}</p>
+    <h2>WHEN</h2>
+    <p>${name.dates.start.localDate}<br>${name.dates.start.localTime}</p>
+    <h2>WHERE</h2>
+     <p>${name._embedded.venues[0].city.name}, ${name._embedded.venues[0].country.name}<br>${name._embedded.venues[0].name}</p>
+    <h2>WHO</h2>
+    <p>${name.name}</p>
+    <h2>PRICES</h2>
+    <p><span>|||||</span> STANDART ${name.priceRanges[0].min} - ${name.priceRanges[0].max} ${name.priceRanges[0].currency}</p>
+    <button>BUY TICKET</button>
+    <p></p>
+    <button>BUY TICKET</button>
+    <button>MORE FROM THIS AUTHOR</button></div>`;
+        refs.gallery.insertAdjacentHTML('beforebegin', renderMarkup);
+        const modalJs = document.querySelector('.modal-js');
+        console.log(modalJs);
+        if (modalJs) {
+          modalJs.classList.remove('is-hidden');
+          const closeModalBtn = document.querySelector('[data-modal-close]');
+          closeModalBtn.addEventListener('click', () => {
+            modalJs.remove();
+          });
+        }
+      })
+      .catch(console.log('erorr'));
+  }
 }

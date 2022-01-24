@@ -7,4 +7,8 @@ import './JS/modal';
 import './JS/input';
 import './templates/markup.hbs';
 import './templates/modal.hbs';
-import './JS/main'
+import './JS/modal_footer';
+import './JS/main';
+import './JS/select';
+import './JS/fetchCountryCodes';
+import './JS/bg';

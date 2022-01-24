@@ -1,21 +1,21 @@
-{{#each this}}
-  <div class='photo-card'>
+{{!-- {{#each this}}
+  <div class='photo-card' data-id='{{id}}'>
     <img
       class='img'
-      src='{{images.url}}'
+      src='{{[1]}}'
       alt='{{images.attribution}}'
       loading='lazy'
     />
     <div class='info'>
-      <p class='info-item'>
-        <b><span>{{name}}</span></b>
+      <p class='info-item-name'>
+        <b><span>{{1}}</span></b>
       </p>
-      <p class='info-item'>
-        <b><span>{{dates.start.localDate}}</span></b>
+      <p class='info-item-lokal'>
+        <span>{{dates.start.localDate}}</span>
       </p>
-      <p class='info-item'>
+      <p class='info-item-address'>
         <b><span>{{place.address}}</span></b>
       </p>
     </div>
-  </div>
-{{/each}}
+  </div></a>
+{{/each}} --}}

@@ -1,14 +1,37 @@
+// export default function modal() {
+//   const refs = {
+//     openModalBtn: document.querySelector('.gallery'),
+//     closeModalBtn: document.querySelector('.modal-close-js'),
+//     modal: document.querySelector('.modal-js'),
+//   };
+
+//   refs.openModalBtn.addEventListener('click', toggleModal);
+//   refs.closeModalBtn.addEventListener('click', toggleModal);
+
+//   function toggleModal() {
+//     refs.modal.classList.toggle('is-hidden');
+//   }
+// }
+
 // (() => {
-//     const refs = {
-//       openModalBtn: document.querySelector('[data-franshize-open]'),
-//       closeModalBtn: document.querySelector('[data-franshize-close]'),
-//       modal: document.querySelector('[data-franshize]'),
-//     };
+//   const refs = {
+//     openModalBtn: document.querySelector('[data-modal-open]'),
+//     closeModalBtn: document.querySelector('[data-modal-close]'),
+//     modal: document.querySelector('[data-modal]'),
+//   };
 
-//     refs.openModalBtn.addEventListener('click', toggleModal);
-//     refs.closeModalBtn.addEventListener('click', toggleModal);
+// console.log(refs.closeModalBtn);
 
-//     function toggleModal() {
-//       refs.modal.classList.toggle('is-hidden');
-//     }
-//   })(); 
+//   refs.openModalBtn.addEventListener('click', toggleModal);
+//   refs.closeModalBtn.addEventListener('click', closeModal);
+
+//   function toggleModal() {
+//     refs.modal.classList.remove('is-hidden');
+//     console.log('ok');
+//   }
+
+//   function closeModal() {
+//     refs.modal.classList.add('is-hidden');
+
+//     console.log('xxx');
+//   };
