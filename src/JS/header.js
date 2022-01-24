@@ -13,7 +13,7 @@ const refs = {
   modal: document.querySelector('[data-modal]'),
   selectCountry: document.querySelectorAll('#selectCountries'),
 };
-console.log(refs.countryInput);
+// console.log(refs.countryInput);
 
 // console.log(refs.selectCountry);
 refs.headerForm.addEventListener('input', debounce(onInput, 500));
@@ -22,10 +22,38 @@ function onInput(event) {
   const searchingInput = refs.searchingInput.value;
   const countryInput = refs.countryInput.value;
   console.log(countryInput);
-  countryCode(countryInput).then(({ _embedded }) => {
-    function markup(countyCodes) {
-      const markup = events;
+  countryCode(countryInput).then(({ _embedded}) => {
+    console.log(_embedded);
+    console.log( _embedded.venues)
+    function renderMarkupFilter(events) {
+      const markup = events.map(
+        event=>{
+          return `
+        <div class='photo-card' data-div='event' data-id='${event.id}'>
+        <img
+          class='img'
+          src=''
+          alt=''
+          loading='lazy'
+        />
+        <div class='info'>
+          <p class='info-item-name'>
+            <b><span>${event.name}</span></b>
+          </p>
+          <p class='info-item-lokal'>
+            <span></span>
+          </p>
+          <p class='info-item-address'>
+            <b><span></span></b>
+          </p>
+        </div>
+      </div>
+        `;
+        })
+        .join('');
+        refs.gallery.innerHTML = markup;
     }
+    renderMarkupFilter(_embedded.venues)
   });
   fetchImages(searchingInput).then(({ _embedded }) => {
     // console.log(_embedded.events[19]._embedded.venues[0].country.countryCode);
@@ -55,7 +83,7 @@ function onInput(event) {
         `;
         })
         .join('');
-      refs.gallery.innerHTML = markup;
+      // refs.gallery.innerHTML = markup;
     }
     renderMarkupCards(_embedded.events);
   });
