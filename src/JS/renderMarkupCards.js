@@ -20,7 +20,7 @@ export default function renderMarkupCards(events) {
         <span>${event.dates.start.localDate}</span>
       </p>
       <p class='info-item-address'>
-        <b><span>${event._embedded.venues[0].name}</span></b>
+        <b><span> &#127757; ${event._embedded.venues[0].name}</span></b>
       </p>
     </div>
   </div>
