@@ -1,9 +1,9 @@
 import axios from 'axios';
+import Notiflix from 'notiflix';
 import { debounce } from 'debounce';
 import fetchImages from './input';
 import { paginationMarkup } from './pagination';
 import renderMarkupCards from './renderMarkupCards';
-import optionPagination from './pagination';
 
 const refs = {
   headerForm: document.querySelector('.header__form'),
@@ -13,6 +13,7 @@ const refs = {
   selectCountry: document.querySelectorAll('#selectCountries'),
   pageCount: document.querySelector('.pagination'),
 };
+
 refs.pageCount.addEventListener('click', e => {
   if (e.target.nodeName !== 'A') return;
   const searchingInput = refs.searchingInput.value;
@@ -28,12 +29,18 @@ refs.pageCount.addEventListener('click', e => {
   const data = e.target.href;
   fetch(data)
     .then(response => response.json())
-    .then(({ _embedded,page }) => {
+    .then(({ _embedded, page }) => {
       console.log();
       e.preventDefault();
       refs.gallery.innerHTML = renderMarkupCards(_embedded.events);
-      console.log(optionPagination);
-      refs.pageCount.innerHTML = paginationMarkup(page.totalPages, page.number + 1, optionPagination);
+      if (page.totalPages > 49) {
+        page.totalPages = 49;
+      }
+      refs.pageCount.innerHTML = paginationMarkup(
+        page.totalPages,
+        page.number + 1,
+        optionPagination,
+      );
     });
 });
 
@@ -42,6 +49,7 @@ function onInput(event) {
   event.preventDefault();
   const searchingInput = refs.searchingInput.value;
   const countryInput = refs.countryInput.value;
+
   let page = 0;
   fetchImages(searchingInput, countryInput, page)
     .then(({ _embedded, page }) => {
@@ -54,11 +62,17 @@ function onInput(event) {
         baseClass: 'pageCount',
         query: `countryCode=${countryInput}&keyword=${searchingInput}`,
       };
+      if (page.totalPages > 49) {
+        page.totalPages = 49;
+      }
       const renderPageMarkup = paginationMarkup(page.totalPages, page.number + 1, optionPagination);
       refs.pageCount.innerHTML = renderPageMarkup;
 
       // refs.gallery.innerHTML = renderMarkupCards(_embedded.events);
-      
     })
-    .catch(console.log);
+    .catch(err => {
+      if ((err = "Cannot read properties of undefined (reading 'events'")) {
+        Notiflix.Notify.warning('Введи страну, Пёс');
+      }
+    });
 }

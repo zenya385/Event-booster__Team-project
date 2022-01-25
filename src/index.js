@@ -12,3 +12,4 @@ import './JS/main';
 import './JS/select';
 import './JS/fetchCountryCodes';
 import './JS/bg';
+import './JS/firstEvents';
