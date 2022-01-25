@@ -1,37 +1,29 @@
-// export default function modal() {
-//   const refs = {
-//     openModalBtn: document.querySelector('.gallery'),
-//     closeModalBtn: document.querySelector('.modal-close-js'),
-//     modal: document.querySelector('.modal-js'),
-//   };
+import fetchModalInfo from './main';
 
-//   refs.openModalBtn.addEventListener('click', toggleModal);
-//   refs.closeModalBtn.addEventListener('click', toggleModal);
+import renderModalInfo from './renderModalInfo';
 
-//   function toggleModal() {
-//     refs.modal.classList.toggle('is-hidden');
-//   }
-// }
+const refs = {
+  gallery: document.querySelector('.gallery'),
+};
+document.addEventListener('click', getData);
 
-// (() => {
-//   const refs = {
-//     openModalBtn: document.querySelector('[data-modal-open]'),
-//     closeModalBtn: document.querySelector('[data-modal-close]'),
-//     modal: document.querySelector('[data-modal]'),
-//   };
-
-// console.log(refs.closeModalBtn);
-
-//   refs.openModalBtn.addEventListener('click', toggleModal);
-//   refs.closeModalBtn.addEventListener('click', closeModal);
-
-//   function toggleModal() {
-//     refs.modal.classList.remove('is-hidden');
-//     console.log('ok');
-//   }
-
-//   function closeModal() {
-//     refs.modal.classList.add('is-hidden');
-
-//     console.log('xxx');
-//   };
+function getData(e) {
+  e.preventDefault();
+  if (e.target.dataset.div === 'event') {
+    const dataId = e.target.getAttribute('data-id');
+    fetchModalInfo(dataId)
+      .then(name => {
+        refs.gallery.insertAdjacentHTML('beforebegin', renderModalInfo(name));
+        const modalJs = document.querySelector('.modal-js');
+        console.log(modalJs);
+        if (modalJs) {
+          modalJs.classList.remove('is-hidden');
+          const closeModalBtn = document.querySelector('[data-modal-close]');
+          closeModalBtn.addEventListener('click', () => {
+            modalJs.remove();
+          });
+        }
+      })
+      .catch(console.log('erorr'));
+  }
+}
