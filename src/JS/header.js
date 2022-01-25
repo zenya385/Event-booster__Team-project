@@ -15,6 +15,7 @@ const refs = {
 };
 
 refs.pageCount.addEventListener('click', e => {
+  e.preventDefault();
   if (e.target.nodeName !== 'A') return;
   const searchingInput = refs.searchingInput.value;
   const countryInput = refs.countryInput.value;
@@ -38,7 +39,7 @@ refs.pageCount.addEventListener('click', e => {
       }
       refs.pageCount.innerHTML = paginationMarkup(
         page.totalPages,
-        page.number ,
+        page.number + 1,
         optionPagination,
       );
     });
@@ -65,14 +66,14 @@ function onInput(event) {
       if (page.totalPages > 49) {
         page.totalPages = 49;
       }
-      const renderPageMarkup = paginationMarkup(page.totalPages, page.number , optionPagination);
+      const renderPageMarkup = paginationMarkup(page.totalPages, page.number + 1, optionPagination);
       refs.pageCount.innerHTML = renderPageMarkup;
 
       // refs.gallery.innerHTML = renderMarkupCards(_embedded.events);
     })
     .catch(err => {
       if ((err = "Cannot read properties of undefined (reading 'events'")) {
-        Notiflix.Notify.warning('Введи страну, Пёс');
+        Notiflix.Notify.info('Choose you country');
       }
     });
 }

@@ -8,7 +8,6 @@ const refs = {
 document.addEventListener('click', getData);
 
 function getData(e) {
-  e.preventDefault();
   if (e.target.dataset.div === 'event') {
     const dataId = e.target.getAttribute('data-id');
     fetchModalInfo(dataId)
@@ -24,6 +23,6 @@ function getData(e) {
           });
         }
       })
-      .catch(console.log('erorr'));
+      .catch(console.log);
   }
 }
