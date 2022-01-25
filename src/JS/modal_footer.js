@@ -1,6 +1,3 @@
-// import 'basiclightbox/dist/basicLightbox.min.css';
-// import * as basicLightbox from 'basiclightbox';
-
 const openModalLink = document.querySelector('#toggle-modal');
 const closeBtn = document.querySelector('.icon-close');
 
@@ -17,4 +14,3 @@ closeBtn.addEventListener('click', closeModal);
 function closeModal() {
   lightBox.classList.remove('is-open');
 }
-// console.log(lightBox);
