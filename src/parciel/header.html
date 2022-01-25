@@ -1,12 +1,17 @@
 <header class="header">
   <div class="container">
-    <a class="header__logo" href="tel:+380961111111">
-      <svg class="header__logo--svg">
+ <div class="container">
+    <div class="header__logo">
+      <svg class="header__logo-icon">
         <use href="./img/sprite.svg#logo"></use>
       </svg>
-    </a>
-
-    <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
+      
+      <div class="background-logo"></div>
+    </div>
+    <button class="btn-toggle">Toggle theme</button>
+    <h1 class="header__title">
+      FIND BEST EVENTS AROUND THE WORLD
+    </h1>
     <form class="header__form">
       <input
         class="header__form--input"
@@ -14,9 +19,14 @@
         name="Start searching"
         placeholder="Start searching"
       />
+      <svg class="header__search-icon">
+        <use href="./img/sprite.svg#icon-search"></use>
+      </svg>
       <div>
-        <select name="" id="selectCountries" class="header__form--input1"></select>
+        <select name="" id="selectCountries" class="header__form--input1">
+        </select>
       </div>
     </form>
   </div>
 </header>
+

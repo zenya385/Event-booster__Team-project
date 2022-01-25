@@ -1,6 +1,22 @@
-// .header {
-//   background-color: black;
-// }
+body {
+  background-color: #fff;
+}
+
+body.dark-theme {
+  background-color: #0e0e0e;
+}
+
+.btn-toggle {
+  color: #dc56c5;
+  width: 60px;
+  height: 50px;
+  border: 2px solid #dc56c5;
+  border-radius: 40%;
+  background-color: black;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+}
 
 .header {
   overflow: hidden;
@@ -43,25 +59,27 @@
 .header__title {
   width: 293px;
   // height: 44px;
-  position: absolute;
-  top: 80px;
+  // position: absolute;
+
+  padding-top: 64px;
   font-style: normal;
   font-weight: 900;
   font-size: 18px;
   line-height: 22px;
-
+  margin-bottom: 25px;
   text-align: center;
-
+  padding-top: 15px;
   color: var(--accent-color);
 
   text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 768px) {
     font-size: 30px;
     line-height: 1.23;
     width: 436px;
     top: 40px;
     right: 164px;
+    padding-top: 0px;
   }
 
   @media screen and (min-width: 1200px) {
@@ -74,14 +92,13 @@
 }
 
 .header__form {
-  text-align: center;
-  margin-top: -30px;
-  @media screen and (min-width: 480px) {
+  position: relative;
+  @media screen and (min-width: 768px) {
     display: flex;
-    margin-top: -161px;
+    margin-left: -67px;
   }
   @media screen and (min-width: 1200px) {
-    margin-top: -129px;
+    margin-left: 0px;
   }
 }
 
@@ -98,17 +115,19 @@
   line-height: 20px;
 
   border-radius: 20px;
-
+  position: relative;
   margin-bottom: 25px;
 
   color: #939393;
-  @media screen and (min-width: 480px) {
+
+  @media screen and (min-width: 768px) {
     margin-right: 30px;
     margin-bottom: 0px;
   }
 
   @media screen and (min-width: 1200px) {
-    margin-left: 189px;
+    margin-right: 74px;
+    margin-left: 0px;
   }
 }
 .header__form--input1 {
@@ -128,57 +147,91 @@
   color: #939393;
   border-radius: 20px;
   // margin-top: -30px;
+  // position: relative;
 }
+.header__search-icon {
+  fill: #939393;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 13px;
+  left: 253px;
+}
+
 .header__logo {
-  display: block;
-  background: linear-gradient(250deg, #9c9993 36%, rgba(0, 0, 0, 0.9979342079) 100%);
-  backdrop-filter: blur(30px);
-  position: relative;
-  width: 213.97px;
-  height: 180px;
-  left: -130.49px;
-  top: -95px;
-  z-index: 0;
-  transform: rotate(196deg);
-  border-radius: 50%;
-  @media screen and (min-width: 480px) {
-    left: -278px;
-    top: -157px;
-    background: none;
-    width: 359px;
-    height: 302px;
-    border-radius: 45%;
+  .background-logo {
+    width: 210px;
+    height: 180px;
     background: linear-gradient(
       136.07deg,
       rgba(196, 196, 196, 0.03) 10.75%,
       rgba(196, 196, 196, 0) 92.33%
     );
-    transform: rotate(180deg);
+    backdrop-filter: blur(30px);
+    border-radius: 50%;
+    position: absolute;
+    left: -105px;
+    top: -90px;
   }
-
-  @media screen and (min-width: 1920px) {
-    left: -626px;
-    top: -117px;
+  .header__logo-icon {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    fill: var(--white-text-color);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .background-logo {
+      width: 360px;
+      height: 300px;
+      left: -180px;
+      top: -150px;
+    }
+    .header__logo-icon {
+      width: 100px;
+      height: 50px;
+      left: 40px;
+      top: 40px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .background-logo {
+      width: 480px;
+      height: 400px;
+      left: -240px;
+      top: -200px;
+    }
+    .header__logo-icon {
+      width: 140px;
+      height: 70px;
+      left: 40px;
+      top: 40px;
+    }
   }
 }
-.header__logo--svg {
-  width: 60px;
-  height: 30px;
-  fill: #ffffff;
-  z-index: 1;
-  transform: rotate(164deg);
-  position: absolute;
-  left: 13px;
-  top: 47px;
-  @media screen and (min-width: 480px) {
-    width: 100px;
-    height: 50px;
-    left: 51px;
-    top: 61px;
-    transform: rotate(180deg);
-  }
-  @media screen and (min-width: 1200px) {
-    width: 140px;
-    height: 70px;
-  }
+.input__option {
+  border: none;
+  background-color: #939393;
+  color: var(--white-text-color);
+}
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #939393;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #939393;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #939393;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #939393;
 }
