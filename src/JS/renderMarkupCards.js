@@ -1,9 +1,11 @@
+import 'animate.css';
+
 export default function renderMarkupCards(events) {
   // console.log(events.map(event => event.images.filter(filter => (filter.ratio = 3.4))));
   const markup = events
     .map(event => {
       return `
-    <div class='photo-card' data-div='event' data-id='${event.id}'>
+    <div class='photo-card animate__animated animate__zoomIn' data-div='event' data-id='${event.id}'>
     <div class="wraper">
     <img
       class='img'
