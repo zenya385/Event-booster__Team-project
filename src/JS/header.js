@@ -72,7 +72,7 @@ function onInput(event) {
     })
     .catch(err => {
       if ((err = "Cannot read properties of undefined (reading 'events'")) {
-        Notiflix.Notify.warning('Введи страну, Пёс');
+        Notiflix.Notify.info('Choose you country');
       }
     });
 }
