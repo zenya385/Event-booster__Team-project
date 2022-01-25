@@ -24,10 +24,10 @@
 
 .photo-card {
   position: relative;
-  height: 300px;
+  height: 350px;
 
   @media screen and (min-width: 320px) {
-    height: 300px;
+    height: 350px;
   }
   &::before {
     display: inline-block;
@@ -117,7 +117,7 @@
 
   @media screen and (min-width: 1280px) {
     grid-template-columns: repeat(4, 180px);
-    gap: 90px 63px;
+    gap: 55px 70px;
   }
 
   // display: flex;
