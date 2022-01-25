@@ -4,12 +4,14 @@ export default function renderMarkupCards(events) {
     .map(event => {
       return `
     <div class='photo-card' data-div='event' data-id='${event.id}'>
+    <div class="wraper">
     <img
       class='img'
       src='${event.images[0].url}'
       alt=''
       loading='lazy'
     />
+    </div>
     <div class='info'>
       <p class='info-item-name'>
         <b><span>${event.name}</span></b>
