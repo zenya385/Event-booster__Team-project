@@ -5,14 +5,25 @@ const refs = {
   gallery: document.querySelector('.gallery'),
 };
 
-fetchImages('Metallica', 'US', '0').then(response => {
-  //   function asd(arr) {
-  //     arr.filter(todayDate => {
-  //       // console.log(events.map(event => event.images.filter(filter => (filter.ratio = 3.4))));
-  //       const todayEvents = todayDate.dates.start.localDate <= new Date();
-  //       //   console.log(todayDate.dates.start.localDate);
+fetchImages('', 'LU', '0').then(response => {
   refs.gallery.innerHTML = renderMarkupCards(response._embedded.events);
 });
+//   const date = new Date();
+//   const msDays = Date.parse(date);
+//   console.log(msDays);
+//   const eventDate = Date.parse(response._embedded.events[0].dates.start.dateTime);
+//   console.log(eventDate);
+
+//   function filterByDateEvent(msDays, eventDate) {
+//     const eventDates = Date.parse(
+//       response._embedded.events.map(event => event.dates.start.dateTime),
+//     );
+//     console.log(eventDates);
+
+//     // if (eventDates - msDays > 0) {
+//     // }
 //   }
-asd(response._embedded.events);
-// });
+//   filterByDateEvent(msDays, eventDate);
+
+//   console.log(response._embedded.events[0].dates.start.dateTime);
+//   console.log(sortedByDateEvents);
