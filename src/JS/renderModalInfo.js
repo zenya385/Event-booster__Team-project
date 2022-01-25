@@ -17,7 +17,7 @@ export default function renderModalInfo(name) {
 
 // export default function renderModalInfo(name) {
   const renderMarkup = `
-  <div class="backdrop">
+  <div class="backdrop ">
 <div class="is-hidden modal-js">
 <button data-modal-close class="btn-modal-close">X<svg width="20"><use href="./img/sprite.svg#icon-close"></use></svg></button>
 <div class="wrapper-image-small"><img  src="${name.images[3].url}" class="modal-image-small"></div>
