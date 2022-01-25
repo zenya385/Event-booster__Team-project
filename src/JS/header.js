@@ -38,7 +38,7 @@ refs.pageCount.addEventListener('click', e => {
       }
       refs.pageCount.innerHTML = paginationMarkup(
         page.totalPages,
-        page.number + 1,
+        page.number ,
         optionPagination,
       );
     });
@@ -65,7 +65,7 @@ function onInput(event) {
       if (page.totalPages > 49) {
         page.totalPages = 49;
       }
-      const renderPageMarkup = paginationMarkup(page.totalPages, page.number + 1, optionPagination);
+      const renderPageMarkup = paginationMarkup(page.totalPages, page.number , optionPagination);
       refs.pageCount.innerHTML = renderPageMarkup;
 
       // refs.gallery.innerHTML = renderMarkupCards(_embedded.events);
