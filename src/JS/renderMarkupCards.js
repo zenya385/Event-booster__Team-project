@@ -1,7 +1,8 @@
 import 'animate.css';
 
 export default function renderMarkupCards(events) {
-  // console.log(events.map(event => event.images.filter(filter => (filter.ratio = 3.4))));
+  // console.log(events);
+
   const markup = events
     .map(event => {
       return `
