@@ -1,3 +1,33 @@
+.block-info {
+  overflow: hidden;
+  // Width:243px;
+  Height:129px;
+@media screen and(min-width:768){
+  // Width:265px;
+  Height:100px;
+}
+@media screen and(min-width:1280) {
+  // Width:450px;
+Height:66px;
+}
+  .modal-text {
+    text-align: center;
+    animation: text 15s infinite linear;
+    animation-direction: alternate;
+  
+    white-space: pre-wrap;
+  }
+  @keyframes text {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    100% {
+      transform: translate(0, -160%);
+    }
+  }
+}
+
 .backdrop {
   position: fixed;
   z-index: 99;
@@ -39,7 +69,6 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    // min-height: 60%;
     border-radius: 300px 0;
     width: 595px;
     padding: 30px 50px 55px;
@@ -218,34 +247,6 @@
   }
 }
 
-// animation-direction: normal;
 
-> .block-info {
-  overflow: hidden;
-  height: 200px;
-  width: 100px;
-  // margin: 0 auto;
-  // background: #343436;
-  // &::before {
-  //   overflow: hidden;
-  //   display: inline-block;
-  //   position: absolute;
-  //   content: '';
-}
-.modal-text {
-  text-align: center;
-  // overflow: hidden;
-  animation: text 5s infinite linear;
-  animation-direction: alternate;
 
-  white-space: pre-wrap;
-}
-@keyframes text {
-  0% {
-    transform: translate(0, 0);
-  }
 
-  100% {
-    transform: translate(0, -160%);
-  }
-}
