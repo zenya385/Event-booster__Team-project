@@ -1,10 +1,17 @@
-<header>
+<header class="header">
   <div class="container">
-    <a href="" class="header__logo">
-      <img class="header__logo--image" src="./img/Group_5.png" alt="logo" width="200" height="50" />
-    </a>
-    <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
-
+ <div class="container-header">
+    <div class="header__logo">
+      <svg class="header__logo-icon">
+        <use href="./img/sprite.svg#logo"></use>
+      </svg>
+      
+      <div class="background-logo"></div>
+    </div>
+    <button class="btn-toggle">Toggle theme</button>
+    <h1 class="header__title">
+      FIND BEST EVENTS AROUND THE WORLD
+    </h1>
     <form class="header__form">
       <input
         class="header__form--input"
@@ -12,12 +19,13 @@
         name="Start searching"
         placeholder="Start searching"
       />
-      <input
-        class="header__form--input1"
-        type="text"
-        name="Choose country"
-        placeholder="Choose country"
-      />
+      <svg class="header__search-icon">
+        <use href="./img/sprite.svg#icon-search"></use>
+      </svg>
+      <div class="input1-wraper">
+        <select name="" id="selectCountries" class="header__form--input1"></select>
+      </div>
     </form>
   </div>
 </header>
+

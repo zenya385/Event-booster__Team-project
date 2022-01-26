@@ -1,0 +1,135 @@
+.is-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+// .lightbox {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   opacity: 0;
+//   pointer-events: none;
+//   // transition: opacity var(--animation-duration) var(--timing-function);
+// }
+// .lightbox.is-open {
+//   opacity: 1;
+//   pointer-events: initial;
+// }
+// .lightboxoverlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: rgba(230, 16, 205, 0.878);
+// }
+// .lightboxcontent {
+//   position: absolute;
+//   width: 100%;
+//   max-width: 280px;
+//   height: 610px;
+//   padding: 30px 20px 40px 30px;
+//   transform: translate(-50%, -50%) scale(1);
+//   // background-color: #ffffff;
+//   background: linear-gradient(
+//     90deg,
+//     rgba(171, 67, 161, 1) 4%,
+//     rgba(129, 50, 130, 1) 30%,
+//     rgba(2, 0, 36, 1) 100%
+//   );
+//   transition: transform 750ms cubic-bezier(0.4, 0, 0.2, 1);
+//   @media screen and (min-width: 768px) {
+//     max-width: 618px;
+//     height: 562px;
+//     padding: 42px 30px 40px 28px;
+//   }
+// }
+// .memberitem {
+//   display: flex;
+//   align-items: center;
+//   text-align: left;
+
+//   @media screen and (min-width: 768px) {
+//     &:nth-child(2n) {
+//       margin-left: 30px;
+//     }
+//     flex-basis: calc((100% - 40px) / 2);
+//   }
+// }
+
+// .memberitem-discr {
+//   margin-left: 10px;
+
+//   @media screen and(min-width: 768px) {
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 20px;
+//     line-height: 1.15;
+//   }
+//   @media screen and(min-width: 1024px) {
+//     line-height: 1.17;
+//     margin-left: 50px;
+//   }
+// }
+
+// .memberitem:not(first-child) {
+//   margin-top: 25px;
+// }
+
+// .lightboxbutton {
+//   position: absolute;
+//   top: 8px;
+//   right: 8px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 48px;
+//   height: 48px;
+//   padding: 0;
+//   margin: 0;
+//   border: none;
+//   border-radius: 50%;
+//   background-color: transparent;
+//   color: black;
+//   cursor: pointer;
+//   outline: none;
+//   background-position: center;
+//   background-size: 60%;
+//   background-repeat: no-repeat;
+//   @media screen and(min-width: 768px) {
+//     top: 15px;
+//     right: 25px;
+//   }
+// }
+// .lightboxbutton:hover,
+// .lightboxbutton:focus {
+//   background-color: #00010180;
+// }
+
+// .icon-close {
+//   position: absolute;
+//   top: 3%;
+//   right: 3%;
+//   fill: #ba20e191;
+//   cursor: pointer;
+//   transition: fill 0.25s ease-in;
+
+//   &:hover {
+//     fill: #ff0000;
+//   }
+// }

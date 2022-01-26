@@ -1,14 +1,30 @@
-// (() => {
-//     const refs = {
-//       openModalBtn: document.querySelector('[data-franshize-open]'),
-//       closeModalBtn: document.querySelector('[data-franshize-close]'),
-//       modal: document.querySelector('[data-franshize]'),
-//     };
+import fetchModalInfo from './main';
+import renderModalInfo from './renderModalInfo';
 
-//     refs.openModalBtn.addEventListener('click', toggleModal);
-//     refs.closeModalBtn.addEventListener('click', toggleModal);
+const refs = {
+  gallery: document.querySelector('.gallery'),
+};
+document.addEventListener('click', getData);
 
-//     function toggleModal() {
-//       refs.modal.classList.toggle('is-hidden');
-//     }
-//   })(); 
+function getData(e) {
+  if (e.target.dataset.div === 'event') {
+    const dataId = e.target.getAttribute('data-id');
+    fetchModalInfo(dataId)
+      .then(name => {
+        refs.gallery.insertAdjacentHTML('beforebegin', renderModalInfo(name));
+        const modalJs = document.querySelector('.modal-js');
+        console.log(modalJs);
+        if (modalJs) {
+          modalJs.classList.add('is-open');
+          const closeModalBtn = document.querySelector('[data-modal-close]');
+          const backdrop = document.querySelector('.backdrop');
+            console.log(backdrop);
+          closeModalBtn.addEventListener('click', () => {
+            modalJs.remove();
+            backdrop.remove();
+          });
+        }
+      })
+      .catch(console.log);
+  }
+}
