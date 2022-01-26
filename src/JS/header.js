@@ -40,12 +40,13 @@ refs.pageCount.addEventListener('click', e => {
       refs.pageCount.innerHTML = paginationMarkup(page.totalPages, page.number, optionPagination);
     });
 });
-
+const countryInput = refs.countryInput.value;
+console.log(countryInput);
 refs.headerForm.addEventListener('input', debounce(onInput, 500));
 function onInput(event) {
   event.preventDefault();
   const searchingInput = refs.searchingInput.value;
-  const countryInput = refs.countryInput.options.value;
+  const countryInput = refs.countryInput.value;
   console.log(countryInput);
   let page = 0;
   fetchImages(searchingInput, countryInput, page)
@@ -62,6 +63,7 @@ function onInput(event) {
       if (page.totalPages > 49) {
         page.totalPages = 49;
       }
+
       const renderPageMarkup = paginationMarkup(page.totalPages, page.number + 1, optionPagination);
       refs.pageCount.innerHTML = renderPageMarkup;
 

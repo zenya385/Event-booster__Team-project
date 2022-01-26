@@ -1,338 +1,338 @@
 [
   {
-    "countryCode": "US",
-    "country": "Select a country"
+    "value": "US",
+    "label": "Select a label"
   },
   {
-    "countryCode": "US",
-    "country": "United States Of America"
+    "value": "US",
+    "label": "United States Of America"
   },
   {
-    "countryCode": "AD",
-    "country": "Andorra"
+    "value": "AD",
+    "label": "Andorra"
   },
   {
-    "countryCode": "AI",
-    "country": "Anguilla"
+    "value": "AI",
+    "label": "Anguilla"
   },
   {
-    "countryCode": "AR",
-    "country": "Argentina"
+    "value": "AR",
+    "label": "Argentina"
   },
   {
-    "countryCode": "AU",
-    "country": "Australia"
+    "value": "AU",
+    "label": "Australia"
   },
   {
-    "countryCode": "AT",
-    "country": "Austria"
+    "value": "AT",
+    "label": "Austria"
   },
   {
-    "countryCode": "AZ",
-    "country": "Azerbaijan"
+    "value": "AZ",
+    "label": "Azerbaijan"
   },
   {
-    "countryCode": "BS",
-    "country": "Bahamas"
+    "value": "BS",
+    "label": "Bahamas"
   },
   {
-    "countryCode": "BH",
-    "country": "Bahrain"
+    "value": "BH",
+    "label": "Bahrain"
   },
   {
-    "countryCode": "BB",
-    "country": "Barbados"
+    "value": "BB",
+    "label": "Barbados"
   },
   {
-    "countryCode": "BE",
-    "country": "Belgium"
+    "value": "BE",
+    "label": "Belgium"
   },
   {
-    "countryCode": "BM",
-    "country": "Bermuda"
+    "value": "BM",
+    "label": "Bermuda"
   },
   {
-    "countryCode": "BR",
-    "country": "Brazil"
+    "value": "BR",
+    "label": "Brazil"
   },
   {
-    "countryCode": "BG",
-    "country": "Bulgaria"
+    "value": "BG",
+    "label": "Bulgaria"
   },
   {
-    "countryCode": "CA",
-    "country": "Canada"
+    "value": "CA",
+    "label": "Canada"
   },
   {
-    "countryCode": "CL",
-    "country": "Chile"
+    "value": "CL",
+    "label": "Chile"
   },
   {
-    "countryCode": "CN",
-    "country": "China"
+    "value": "CN",
+    "label": "China"
   },
   {
-    "countryCode": "CO",
-    "country": "Colombia"
+    "value": "CO",
+    "label": "Colombia"
   },
   {
-    "countryCode": "CR",
-    "country": "Costa Rica"
+    "value": "CR",
+    "label": "Costa Rica"
   },
   {
-    "countryCode": "HR",
-    "country": "Croatia"
+    "value": "HR",
+    "label": "Croatia"
   },
   {
-    "countryCode": "CY",
-    "country": "Cyprus"
+    "value": "CY",
+    "label": "Cyprus"
   },
   {
-    "countryCode": "CZ",
-    "country": "Czech Republic"
+    "value": "CZ",
+    "label": "Czech Republic"
   },
   {
-    "countryCode": "DK",
-    "country": "Denmark"
+    "value": "DK",
+    "label": "Denmark"
   },
   {
-    "countryCode": "DO",
-    "country": "Dominican Republic"
+    "value": "DO",
+    "label": "Dominican Republic"
   },
   {
-    "countryCode": "EC",
-    "country": "Ecuador"
+    "value": "EC",
+    "label": "Ecuador"
   },
   {
-    "countryCode": "EE",
-    "country": "Estonia"
+    "value": "EE",
+    "label": "Estonia"
   },
   {
-    "countryCode": "FO",
-    "country": "Faroe Islands"
+    "value": "FO",
+    "label": "Faroe Islands"
   },
   {
-    "countryCode": "FI",
-    "country": "Finland"
+    "value": "FI",
+    "label": "Finland"
   },
   {
-    "countryCode": "FR",
-    "country": "France"
+    "value": "FR",
+    "label": "France"
   },
   {
-    "countryCode": "GE",
-    "country": "Georgia"
+    "value": "GE",
+    "label": "Georgia"
   },
   {
-    "countryCode": "DE",
-    "country": "Germany"
+    "value": "DE",
+    "label": "Germany"
   },
   {
-    "countryCode": "GH",
-    "country": "Ghana"
+    "value": "GH",
+    "label": "Ghana"
   },
   {
-    "countryCode": "GI",
-    "country": "Gibraltar"
+    "value": "GI",
+    "label": "Gibraltar"
   },
   {
-    "countryCode": "GB",
-    "country": "Great Britain"
+    "value": "GB",
+    "label": "Great Britain"
   },
   {
-    "countryCode": "GR",
-    "country": "Greece"
+    "value": "GR",
+    "label": "Greece"
   },
   {
-    "countryCode": "HK",
-    "country": "Hong Kong"
+    "value": "HK",
+    "label": "Hong Kong"
   },
   {
-    "countryCode": "HU",
-    "country": "Hungary"
+    "value": "HU",
+    "label": "Hungary"
   },
   {
-    "countryCode": "IS",
-    "country": "Iceland"
+    "value": "IS",
+    "label": "Iceland"
   },
   {
-    "countryCode": "IN",
-    "country": "India"
+    "value": "IN",
+    "label": "India"
   },
   {
-    "countryCode": "IE",
-    "country": "Ireland"
+    "value": "IE",
+    "label": "Ireland"
   },
   {
-    "countryCode": "IL",
-    "country": "Israel"
+    "value": "IL",
+    "label": "Israel"
   },
   {
-    "countryCode": "IT",
-    "country": "Italy"
+    "value": "IT",
+    "label": "Italy"
   },
   {
-    "countryCode": "JM",
-    "country": "Jamaica"
+    "value": "JM",
+    "label": "Jamaica"
   },
   {
-    "countryCode": "JP",
-    "country": "Japan"
+    "value": "JP",
+    "label": "Japan"
   },
   {
-    "countryCode": "KR",
-    "country": "Korea, Republic of"
+    "value": "KR",
+    "label": "Korea, Republic of"
   },
   {
-    "countryCode": "LV",
-    "country": "Latvia"
+    "value": "LV",
+    "label": "Latvia"
   },
   {
-    "countryCode": "LB",
-    "country": "Lebanon"
+    "value": "LB",
+    "label": "Lebanon"
   },
   {
-    "countryCode": "LT",
-    "country": "Lithuania"
+    "value": "LT",
+    "label": "Lithuania"
   },
   {
-    "countryCode": "LU",
-    "country": "Luxembourg"
+    "value": "LU",
+    "label": "Luxembourg"
   },
   {
-    "countryCode": "MY",
-    "country": "Malaysia"
+    "value": "MY",
+    "label": "Malaysia"
   },
   {
-    "countryCode": "MT",
-    "country": "Malta"
+    "value": "MT",
+    "label": "Malta"
   },
   {
-    "countryCode": "MX",
-    "country": "Mexico"
+    "value": "MX",
+    "label": "Mexico"
   },
   {
-    "countryCode": "MC",
-    "country": "Monaco"
+    "value": "MC",
+    "label": "Monaco"
   },
   {
-    "countryCode": "ME",
-    "country": "Montenegro"
+    "value": "ME",
+    "label": "Montenegro"
   },
   {
-    "countryCode": "MA",
-    "country": "Morocco"
+    "value": "MA",
+    "label": "Morocco"
   },
   {
-    "countryCode": "NL",
-    "country": "Netherlands"
+    "value": "NL",
+    "label": "Netherlands"
   },
   {
-    "countryCode": "AN",
-    "country": "Netherlands Antilles"
+    "value": "AN",
+    "label": "Netherlands Antilles"
   },
   {
-    "countryCode": "NZ",
-    "country": "New Zealand"
+    "value": "NZ",
+    "label": "New Zealand"
   },
   {
-    "countryCode": "ND",
-    "country": "Northern Ireland"
+    "value": "ND",
+    "label": "Northern Ireland"
   },
   {
-    "countryCode": "NO",
-    "country": "Norway"
+    "value": "NO",
+    "label": "Norway"
   },
   {
-    "countryCode": "PE",
-    "country": "Peru"
+    "value": "PE",
+    "label": "Peru"
   },
   {
-    "countryCode": "PL",
-    "country": "Poland"
+    "value": "PL",
+    "label": "Poland"
   },
   {
-    "countryCode": "PT",
-    "country": "Portugal"
+    "value": "PT",
+    "label": "Portugal"
   },
   {
-    "countryCode": "RO",
-    "country": "Romania"
+    "value": "RO",
+    "label": "Romania"
   },
   {
-    "countryCode": "RU",
-    "country": "Russian Federation"
+    "value": "RU",
+    "label": "Russian Federation"
   },
   {
-    "countryCode": "LC",
-    "country": "Saint Lucia"
+    "value": "LC",
+    "label": "Saint Lucia"
   },
   {
-    "countryCode": "SA",
-    "country": "Saudi Arabia"
+    "value": "SA",
+    "label": "Saudi Arabia"
   },
   {
-    "countryCode": "RS",
-    "country": "Serbia"
+    "value": "RS",
+    "label": "Serbia"
   },
   {
-    "countryCode": "SG",
-    "country": "Singapore"
+    "value": "SG",
+    "label": "Singapore"
   },
   {
-    "countryCode": "SK",
-    "country": "Slovakia"
+    "value": "SK",
+    "label": "Slovakia"
   },
   {
-    "countryCode": "SI",
-    "country": "Slovenia"
+    "value": "SI",
+    "label": "Slovenia"
   },
   {
-    "countryCode": "ZA",
-    "country": "South Africa"
+    "value": "ZA",
+    "label": "South Africa"
   },
   {
-    "countryCode": "ES",
-    "country": "Spain"
+    "value": "ES",
+    "label": "Spain"
   },
   {
-    "countryCode": "SE",
-    "country": "Sweden"
+    "value": "SE",
+    "label": "Sweden"
   },
   {
-    "countryCode": "CH",
-    "country": "Switzerland"
+    "value": "CH",
+    "label": "Switzerland"
   },
   {
-    "countryCode": "TW",
-    "country": "Taiwan"
+    "value": "TW",
+    "label": "Taiwan"
   },
   {
-    "countryCode": "TH",
-    "country": "Thailand"
+    "value": "TH",
+    "label": "Thailand"
   },
   {
-    "countryCode": "TT",
-    "country": "Trinidad and Tobago"
+    "value": "TT",
+    "label": "Trinidad and Tobago"
   },
   {
-    "countryCode": "TR",
-    "country": "Turkey"
+    "value": "TR",
+    "label": "Turkey"
   },
   {
-    "countryCode": "UA",
-    "country": "Ukraine"
+    "value": "UA",
+    "label": "Ukraine"
   },
   {
-    "countryCode": "AE",
-    "country": "United Arab Emirates"
+    "value": "AE",
+    "label": "United Arab Emirates"
   },
   {
-    "countryCode": "UY",
-    "country": "Uruguay"
+    "value": "UY",
+    "label": "Uruguay"
   },
   {
-    "countryCode": "VE",
-    "country": "Venezuela"
+    "value": "VE",
+    "label": "Venezuela"
   }
 ]

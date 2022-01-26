@@ -4,8 +4,7 @@ import renderMarkupCards from './renderMarkupCards';
 const refs = {
   gallery: document.querySelector('.gallery'),
 };
-
-fetchImages('', 'LU', '0').then(response => {
+fetchImages('', 'US', '0').then(response => {
   refs.gallery.innerHTML = renderMarkupCards(response._embedded.events);
 });
 //   const date = new Date();
