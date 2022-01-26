@@ -15,7 +15,7 @@ export default function renderModalInfo(name) {
     name.priceRanges[0].max = 'no information';
   }
 
-// export default function renderModalInfo(name) {
+  // export default function renderModalInfo(name) {
   const renderMarkup = `
   <div class="backdrop">
 <div class="modal-js">
@@ -26,7 +26,7 @@ export default function renderModalInfo(name) {
 <img src="${name.images[4].url}" class="modal-image-big"></div>
 <div class="text-wrapper">
 <h2 class="title">INFO</h2>
-<p class="modal-text">${name.info}</p>
+<div class="block-info"><p class="modal-text">${name.info}</p></div>
 <h2 class="title">WHEN</h2>
 <p class="modal-text">${name.dates.start.localDate}</p><p class="modal-text">${name.dates.start.localTime}</p>
 <h2 class="title">WHERE</h2>

@@ -29,24 +29,24 @@
   color: black;
   text-align: center;
   @media screen and(min-width: 320px) {
-    min-width: 320px;
+    width: 320px;
   }
   @media screen and(min-width: 480px) {
-    min-width: 430px;
+    width: 430px;
   }
   @media screen and(min-width: 768px) {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    min-height: 60%;
+    // min-height: 60%;
     border-radius: 300px 0;
-    min-width: 595px;
+    width: 595px;
     padding: 30px 50px 55px;
   }
   @media screen and(min-width: 1280px) {
-    min-width: 940px;
-    min-height: 70%;
+    width: 940px;
+    // min-height: 70%;
     padding: 62px 60px;
   }
 }
@@ -113,7 +113,7 @@
   }
 }
 
-.wrapper-image-big{
+.wrapper-image-big {
   display: none;
   @media screen and(min-width: 768px) {
     width: 260px;
@@ -143,8 +143,8 @@
 .text-wrapper {
   text-align: center;
   @media screen and(min-width: 768px) {
-   text-align: start;
-   width: calc(100% / 2);
+    text-align: start;
+    width: calc(100% / 2);
   }
 }
 
@@ -154,14 +154,14 @@
   font-size: 20px;
   line-height: 1.2;
   &:not(:first-child) {
-      margin-top: 10px;
-    } 
+    margin-top: 10px;
+  }
   // margin-top: 10px;
   @media screen and(min-width: 1200px) {
     font-size: 24px;
     &:not(:first-child) {
       margin-top: 20px;
-    } 
+    }
   }
 }
 
@@ -193,11 +193,10 @@
   line-height: 1.25;
   text-align: center;
   padding: 10px 20px;
-  
+
   @media screen and(min-width: 1200px) {
     margin-top: 20px;
   }
- 
 }
 
 .modal-btn-more {
@@ -216,5 +215,37 @@
   @media screen and(min-width: 768px) {
     width: 255px;
     margin-top: 45px;
+  }
+}
+
+// animation-direction: normal;
+
+> .block-info {
+  overflow: hidden;
+  height: 200px;
+  width: 100px;
+  // margin: 0 auto;
+  // background: #343436;
+  // &::before {
+  //   overflow: hidden;
+  //   display: inline-block;
+  //   position: absolute;
+  //   content: '';
+}
+.modal-text {
+  text-align: center;
+  // overflow: hidden;
+  animation: text 5s infinite linear;
+  animation-direction: alternate;
+
+  white-space: pre-wrap;
+}
+@keyframes text {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, -160%);
   }
 }
