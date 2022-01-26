@@ -110,4 +110,4 @@ const e=document.querySelector(".btn-toggle");e.addEventListener("click",functio
 },{"./input":"S20x","./renderMarkupCards":"VpFE","./pagination":"EKHO"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/_main.scss"),require("./JS/modal"),require("./JS/footer"),require("./JS/header"),require("./JS/input"),require("./templates/markup.hbs"),require("./templates/modal.hbs"),require("./JS/modal_footer"),require("./JS/main"),require("./JS/select"),require("./JS/fetchCountryCodes"),require("./JS/bg"),require("./JS/firstEvents");
 },{"./sass/_main.scss":"fq2g","./JS/modal":"JjjK","./JS/footer":"lR1k","./JS/header":"Ue5A","./JS/input":"S20x","./templates/markup.hbs":"mTXF","./templates/modal.hbs":"a5Hl","./JS/modal_footer":"E1Aw","./JS/main":"F2HO","./JS/select":"fMzo","./JS/fetchCountryCodes":"gBBC","./JS/bg":"vCWd","./JS/firstEvents":"I35h"}]},{},["Focm"], null)
-//# sourceMappingURL=/Event-booster__Team-project/src.91867637.js.map
+//# sourceMappingURL=/Event-booster__Team-project/src.9661f2d7.js.map
