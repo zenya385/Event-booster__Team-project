@@ -6,25 +6,29 @@ body.dark-theme {
     rgba(112, 112, 112, 1) 100%
   );
   color: var(--p-text-color);
+  .btn-toggle{
+    background-image: url('../img/sun.gif');
+    background-size: 27px;
+  }
+  // background: linear-gradient( 180deg , #0e0e0e 17%, white 21%, #f9f9f9 70%);
+  color: var(--p-text-color);
 }
 
 .btn-toggle {
   color: #dc56c5;
-  width: 60px;
-  height: 50px;
-  border: 2px solid #dc56c5;
-  border-radius: 40%;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
   background-color: black;
   align-items: center;
   display: flex;
   margin-left: auto;
-  transition: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-image: url('../img/luna.gif');
+  background-size: contain;
+  z-index: 1000;
 }
-.btn-toggle:hover {
-  background-color: #dc56c5;
-  border: 2px solid black;
-  color: white;
-}
+
 
 .header {
   overflow: hidden;
