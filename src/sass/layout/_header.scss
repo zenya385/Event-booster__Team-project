@@ -150,6 +150,10 @@ body.dark-theme {
   // margin-top: -30px;
   // position: relative;
 }
+
+.header__form--input1::-webkit-scrollbar {
+  width: 0;
+}
 .header__search-icon {
   fill: #939393;
   width: 12px;
@@ -215,11 +219,13 @@ body.dark-theme {
     }
   }
 }
+
 .input__option {
-  border: none;
-  background-color: #939393;
+  background-color: black;
+  fill: Solid rgba(255, 255, 255, 0.2);
   color: var(--white-text-color);
 }
+
 ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #939393;
@@ -262,4 +268,74 @@ body.dark-theme {
     padding-left: 58px;
     padding: 0 165px;
   }
+}
+
+.input1-wraper,
+.header__form--input1 {
+  position: relative;
+  z-index: 99;
+  height: 30px !important;
+  width: 270px !important;
+
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 16px !important;
+  letter-spacing: 0;
+}
+.choices[data-type*='select-one'] {
+  border: none !important;
+  border-radius: 20px !important;
+  height: 40px !important;
+  color: white !important;
+}
+.choices__list--dropdown {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(80px) !important;
+  border: 0px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0 0 25px 25px !important;
+}
+.choices[data-type*='select-one'] .choices__inner {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(80px) !important;
+  border: none !important;
+  border-radius: 15px 15px 0 0 !important;
+}
+.choices[data-type*='select-one'] .choices__input {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(80px) !important;
+  color: white !important;
+}
+.choices[data-type*='select-one']::after {
+  border-color: #fff transparent transparent !important;
+  border-width: 7px !important;
+}
+.choices__item:hover {
+  color: red;
+  font-weight: 700;
+}
+
+option {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 20px !important;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background-color: transparent !important;
+  &::after {
+    display: none;
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.choices__placeholder {
+  opacity: 1 !important;
+}
+.choices__list--single {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 16px !important;
+  letter-spacing: 0 !important;
 }
