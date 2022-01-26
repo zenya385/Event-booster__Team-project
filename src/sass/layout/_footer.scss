@@ -3,7 +3,7 @@
   font-size: 14px;
   line-height: 1.14;
   color: #939393;
-  padding-top: 80px;
+  padding-top: 40px;
   padding-bottom: 19px;
   width: 100%;
   background-color: var(--main-bg-color);
@@ -35,10 +35,12 @@
   }
 
   @media screen and (min-width: 480px) {
+    padding-bottom: 27px;
   }
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
+    padding-bottom: 18px;
   }
 
   @media screen and (min-width: 1280px) {
