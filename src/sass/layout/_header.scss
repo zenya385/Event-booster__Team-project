@@ -304,6 +304,11 @@ body.dark-theme {
   backdrop-filter: blur(80px) !important;
   color: white !important;
 }
+
+.is-open .choices__list--dropdown {
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
 .choices[data-type*='select-one']::after {
   border-color: #fff transparent transparent !important;
   border-width: 7px !important;
