@@ -1,10 +1,25 @@
 import fetchImages from './input';
 import renderMarkupCards from './renderMarkupCards';
+import { paginationMarkup } from './pagination';
 
 const refs = {
   gallery: document.querySelector('.gallery'),
+  pageCount: document.querySelector('.pagination'),
 };
 fetchImages('', 'US', '0').then(response => {
+  if (response.page.totalPages > 49) {
+    response.page.totalPages = 49;
+  }
+
+  refs.pageCount.innerHTML = paginationMarkup(response.page.totalPages, response.page.number, {
+    showStart: false,
+    showEnd: false,
+    baseTag: 'a',
+    link: 'https://app.ticketmaster.com/discovery/v2//events.json?apikey=bdHFOjAkpUBvne7gzKAkA6SZNtgLzUV4&page=',
+    baseClass: 'pageCount',
+    query: 'countryCode=US',
+  });
+
   refs.gallery.innerHTML = renderMarkupCards(response._embedded.events);
 });
 //   const date = new Date();

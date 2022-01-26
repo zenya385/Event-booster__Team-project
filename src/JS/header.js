@@ -17,6 +17,10 @@ const refs = {
 refs.pageCount.addEventListener('click', e => {
   e.preventDefault();
   if (e.target.nodeName !== 'A') return;
+  if(e.target.classList.contains('active')){
+    e.preventDefault()
+    return;
+  }
   const searchingInput = refs.searchingInput.value;
   const countryInput = refs.countryInput.value;
   const optionPagination = {
