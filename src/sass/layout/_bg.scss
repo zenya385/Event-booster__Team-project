@@ -1,4 +1,26 @@
 body {
+
+  position: relative;
   background-color: #0e0e0e;
   color: var(--white-text-color);
 }
+
+.rigth-bgr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-image: url('../img/right-img-1x-tablet.png');
+  // background-image: url('../../img/right-img-1x-tablet.png');
+}
+
+.left-bgr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-image: url('../img/left-img-1x-tablet.png');
+}
+
