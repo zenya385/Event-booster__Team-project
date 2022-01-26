@@ -5,7 +5,8 @@ const lightBox = document.querySelector('.js-lightbox');
 
 openModalLink.addEventListener('click', openModal);
 
-function openModal() {
+function openModal(e) {
+  e.preventDefault() 
   lightBox.classList.add('is-open');
 }
 

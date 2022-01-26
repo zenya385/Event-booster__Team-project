@@ -31,7 +31,7 @@ refs.pageCount.addEventListener('click', e => {
   fetch(data)
     .then(response => response.json())
     .then(({ _embedded, page }) => {
-      console.log();
+      // console.log();
       e.preventDefault();
       refs.gallery.innerHTML = renderMarkupCards(_embedded.events);
       if (page.totalPages > 49) {
