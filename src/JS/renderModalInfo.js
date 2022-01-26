@@ -17,8 +17,8 @@ export default function renderModalInfo(name) {
 
 // export default function renderModalInfo(name) {
   const renderMarkup = `
-  <div class="backdrop ">
-<div class="is-hidden modal-js">
+  <div class="backdrop">
+<div class="modal-js">
 <button data-modal-close class="btn-modal-close">X<svg width="20"><use href="./img/sprite.svg#icon-close"></use></svg></button>
 <div class="wrapper-image-small"><img  src="${name.images[3].url}" class="modal-image-small"></div>
 <div class="modal-description">
@@ -34,11 +34,11 @@ export default function renderModalInfo(name) {
 <h2 class="title">WHO</h2>
 <p class="modal-text">${name.name}</p>
 <h2 class="title">PRICES</h2>
-<p class="modal-text"><span>|||||</span> STANDART ${name.priceRanges[0].min} - ${name.priceRanges[0].max} ${name.priceRanges[0].currency}</p>
+<p class="modal-text buy"><span>|||||</span> STANDART ${name.priceRanges[0].min} - ${name.priceRanges[0].max} ${name.priceRanges[0].currency}</p>
 <a href="${name._embedded.venues[0].url}" target="_blank" class="modal-btn">BUY TICKET</a>
-<p class="modal-text"><span>|||||</span> VIP ${name.priceRanges[0].min} - ${name.priceRanges[0].max} ${name.priceRanges[0].currency}</p>
-<a href="${name._embedded.venues[0].url}" target="_blank" class="modal-btn modal-btn-vip">BUY VIP-TICKET</a>
-<a href="${name.url}" target="_blank" class="modal-btn-more">MORE FROM THIS AUTHOR</a></div></div></div></div>
+<p class="modal-text buy"><span>|||||</span> VIP ${name.priceRanges[0].min} - ${name.priceRanges[0].max} ${name.priceRanges[0].currency}</p>
+<a href="${name._embedded.venues[0].url}" target="_blank" class="modal-btn modal-btn-vip">BUY TICKET</a></div></div>
+<a href="${name.url}" target="_blank" class="modal-btn-more">MORE FROM THIS AUTHOR</a></div></div>
 `;
   console.log(name);
   return renderMarkup;

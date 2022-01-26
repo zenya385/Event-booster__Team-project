@@ -1,10 +1,8 @@
 import fetchModalInfo from './main';
-
 import renderModalInfo from './renderModalInfo';
 
 const refs = {
   gallery: document.querySelector('.gallery'),
-  // backdrop: document.querySelector('.backdrop')
 };
 document.addEventListener('click', getData);
 
@@ -17,13 +15,13 @@ function getData(e) {
         const modalJs = document.querySelector('.modal-js');
         console.log(modalJs);
         if (modalJs) {
-          modalJs.classList.remove('is-hidden');
-          // refs.backdrop.classList.remove('is-hidden');
+          modalJs.classList.add('is-open');
           const closeModalBtn = document.querySelector('[data-modal-close]');
+          const backdrop = document.querySelector('.backdrop');
+            console.log(backdrop);
           closeModalBtn.addEventListener('click', () => {
             modalJs.remove();
-            // console.log(backdrop);
-            // refs.backdrop.remove();
+            backdrop.remove();
           });
         }
       })

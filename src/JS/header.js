@@ -39,7 +39,7 @@ refs.pageCount.addEventListener('click', e => {
       }
       refs.pageCount.innerHTML = paginationMarkup(
         page.totalPages,
-        page.number + 1,
+        page.number,
         optionPagination,
       );
     });
