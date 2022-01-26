@@ -37,11 +37,7 @@ refs.pageCount.addEventListener('click', e => {
       if (page.totalPages > 49) {
         page.totalPages = 49;
       }
-      refs.pageCount.innerHTML = paginationMarkup(
-        page.totalPages,
-        page.number,
-        optionPagination,
-      );
+      refs.pageCount.innerHTML = paginationMarkup(page.totalPages, page.number, optionPagination);
     });
 });
 
@@ -73,7 +69,10 @@ function onInput(event) {
     })
     .catch(err => {
       if ((err = "Cannot read properties of undefined (reading 'events'")) {
-        Notiflix.Notify.info('Choose you country');
+        Notiflix.Notify.failure('something went wrong');
+        refs.gallery.innerHTML = '';
+        refs.selectCountry.value = '';
+        refs.pageCount.innerHTML = '';
       }
     });
 }
