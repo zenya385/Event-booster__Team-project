@@ -13,6 +13,9 @@ body {
   height: 100%;
   background-image: url('../img/right-img-1x-tablet.png');
   // background-image: url('../../img/right-img-1x-tablet.png');
+  @media screen and(max-width:767px){
+    display: none;
+  }
 }
 
 .left-bgr {
@@ -22,5 +25,9 @@ body {
   width: 250px;
   height: 100%;
   background-image: url('../img/left-img-1x-tablet.png');
+  @media screen and(max-width:767px){
+    display: none;
+  }
 }
+
 
