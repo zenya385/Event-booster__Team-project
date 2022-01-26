@@ -45,8 +45,8 @@ refs.headerForm.addEventListener('input', debounce(onInput, 500));
 function onInput(event) {
   event.preventDefault();
   const searchingInput = refs.searchingInput.value;
-  const countryInput = refs.countryInput.value;
-
+  const countryInput = refs.countryInput.options.value;
+  console.log(countryInput);
   let page = 0;
   fetchImages(searchingInput, countryInput, page)
     .then(({ _embedded, page }) => {
