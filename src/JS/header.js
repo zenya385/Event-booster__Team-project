@@ -72,9 +72,9 @@ function onInput(event) {
     .catch(err => {
       if ((err = "Cannot read properties of undefined (reading 'events'")) {
         Notiflix.Notify.failure('something went wrong');
-        refs.gallery.innerHTML = '';
-        refs.selectCountry.value = '';
-        refs.pageCount.innerHTML = '';
+        // refs.gallery.innerHTML = '';
+        // refs.selectCountry.value = '';
+        // refs.pageCount.innerHTML = '';
       }
     });
 }
