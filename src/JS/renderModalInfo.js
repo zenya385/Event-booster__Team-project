@@ -15,7 +15,6 @@ export default function renderModalInfo(name) {
     name.priceRanges[0].max = 'no information';
   }
 
-  // export default function renderModalInfo(name) {
   const renderMarkup = `
   <div class="backdrop">
 <div class="modal-js">

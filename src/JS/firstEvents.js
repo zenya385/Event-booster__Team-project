@@ -1,5 +1,6 @@
 import fetchImages from './input';
 import renderMarkupCards from './renderMarkupCards';
+import paginationMarkup from './pagination';
 
 const refs = {
   gallery: document.querySelector('.gallery'),
