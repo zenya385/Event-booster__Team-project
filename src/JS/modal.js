@@ -4,11 +4,12 @@ import renderModalInfo from './renderModalInfo';
 const refs = {
   gallery: document.querySelector('.gallery'),
 };
-document.addEventListener('click', getData);
-
+// let btn = refs.gallery.closest('.photo-card')
+// console.log();
+refs.gallery.addEventListener('click', getData);
 function getData(e) {
-  if (e.target.dataset.div === 'event') {
-    const dataId = e.target.getAttribute('data-id');
+  if (e.target.closest('.photo-card').dataset.div  === 'event') {
+    const dataId = e.target.closest('.photo-card').getAttribute('data-id');
     fetchModalInfo(dataId)
       .then(name => {
         refs.gallery.insertAdjacentHTML('beforebegin', renderModalInfo(name));

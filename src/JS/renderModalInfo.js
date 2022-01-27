@@ -8,12 +8,17 @@ export default function renderModalInfo(name) {
   if (name.dates.start.localTime === 'undefined') {
     name.dates.start.localTime = 'no information';
   }
-  if (name.priceRanges[0].min === 'undefined') {
-    name.priceRanges[0].min = 'no information';
+  if (name.priceRanges[0].min === 'null') {
+    name.priceRanges[0].min = '-';
   }
-  if (name.priceRanges[0].max === 'undefined') {
-    name.priceRanges[0].max = 'no information';
+  if (name.priceRanges[0].max === 'null') {
+    name.priceRanges[0].max = '-';
   }
+  if (name.priceRanges[0].currency === 'null') {
+    name.priceRanges[0].currency = '-';
+  }
+
+  
 
   // export default function renderModalInfo(name) {
   const renderMarkup = `

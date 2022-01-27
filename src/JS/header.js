@@ -38,21 +38,20 @@ refs.pageCount.addEventListener('click', e => {
       // console.log();
       e.preventDefault();
       refs.gallery.innerHTML = renderMarkupCards(_embedded.events);
-      if (page.totalPages > 49) {
-        page.totalPages = 49;
+      if (page.totalPages > 50) {
+        page.totalPages = 50;
       }
-      refs.pageCount.innerHTML = paginationMarkup(page.totalPages, page.number, optionPagination);
+      refs.pageCount.innerHTML = paginationMarkup(page.totalPages, page.number+1, optionPagination);
     });
 });
 const countryInput = refs.countryInput.value;
-console.log(countryInput);
 refs.headerForm.addEventListener('input', debounce(onInput, 500));
 function onInput(event) {
   event.preventDefault();
   const searchingInput = refs.searchingInput.value;
   const countryInput = refs.countryInput.value;
   console.log(countryInput);
-  let page = 0;
+  
   fetchImages(searchingInput, countryInput, page)
     .then(({ _embedded, page }) => {
       refs.gallery.innerHTML = renderMarkupCards(_embedded.events);
@@ -64,8 +63,8 @@ function onInput(event) {
         baseClass: 'pageCount',
         query: `countryCode=${countryInput}&keyword=${searchingInput}`,
       };
-      if (page.totalPages > 49) {
-        page.totalPages = 49;
+      if (page.totalPages > 50) {
+        page.totalPages = 50;
       }
 
       const renderPageMarkup = paginationMarkup(page.totalPages, page.number + 1, optionPagination);

@@ -7,11 +7,14 @@ const refs = {
   pageCount: document.querySelector('.pagination'),
 };
 fetchImages('', 'US', '0').then(response => {
-  if (response.page.totalPages > 49) {
-    response.page.totalPages = 49;
+  let page = response.page.number;
+ page = 0;
+  if (response.page.totalPages > 50) {
+    response.page.totalPages = 50;
   }
+  // console.log(response.page.number+1);
 
-  refs.pageCount.innerHTML = paginationMarkup(response.page.totalPages, response.page.number, {
+  refs.pageCount.innerHTML = paginationMarkup(response.page.totalPages,response.page.number+1, {
     showStart: false,
     showEnd: false,
     baseTag: 'a',
