@@ -7,8 +7,6 @@ const refs = {
   pageCount: document.querySelector('.pagination'),
 };
 fetchImages('', 'US', '0').then(response => {
-  let page = response.page.number;
- page = 0;
   if (response.page.totalPages > 50) {
     response.page.totalPages = 50;
   }

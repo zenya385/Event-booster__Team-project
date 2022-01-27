@@ -13,7 +13,7 @@ const refs = {
   selectCountry: document.querySelectorAll('#selectCountries'),
   pageCount: document.querySelector('.pagination'),
 };
-
+let page = 0;
 refs.pageCount.addEventListener('click', e => {
   e.preventDefault();
   if (e.target.nodeName !== 'A') return;

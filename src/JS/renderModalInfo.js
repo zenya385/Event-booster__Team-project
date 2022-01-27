@@ -1,23 +1,27 @@
 export default function renderModalInfo(name) {
+  console.log(name);
   if (name.info == null) {
     name.info = 'no information';
   }
-  if (name.dates.start.localDate === 'undefined') {
+  if (name.dates.start.localDate === undefined) {
     name.dates.start.localDate = 'no information';
   }
-  if (name.dates.start.localTime === 'undefined') {
+  if (name.dates.start.localTime === undefined) {
     name.dates.start.localTime = 'no information';
   }
-  if (name.priceRanges[0].min === 'null') {
+  // if (name.priceRanges[0].min === null) {
+  //   name.priceRanges[0].min = '-';
+  // }
+  // if (name.priceRanges[0].max === undefined) {
+  //   name.priceRanges[0].max = '-';
+  // }
+  // if (name.priceRanges[0].currency === undefined) {
+  //   name.priceRanges[0].currency = '-';
+  // }
+
+  if (!name.priceRanges[0].min) {
     name.priceRanges[0].min = '-';
   }
-  if (name.priceRanges[0].max === 'null') {
-    name.priceRanges[0].max = '-';
-  }
-  if (name.priceRanges[0].currency === 'null') {
-    name.priceRanges[0].currency = '-';
-  }
-
   
 
   // export default function renderModalInfo(name) {
